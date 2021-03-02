@@ -7,5 +7,5 @@ class User < ApplicationRecord
   has_many :items
   has_many :reviews, through: :items
 
-  validates :username, uniqueness: true
+  # validates :username, uniqueness: true
 end
