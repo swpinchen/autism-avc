@@ -1,27 +1,27 @@
-class TasksController < ApplicationController
+class ItemsController < ApplicationController
   before_action :set_task, only: [:show, :update]
 
   def index
     # @tasks = policy_scope(Task)
-    @tasks = Task.all
+    @items = Item.all
   end
 
   def show
   end
 
   # def new
-  #   @task = Task.new
+  #   @item = Item.new
   # end
 
   # def create
-  #   @task = Task.new
+  #   @item = Item.new
   #   @user = current_user
   # end
 
   private
 
   def set_task
-    @task = Task.find(params[:id])
-    authorize @task
+    @item = Item.find(params[:id])
+    authorize @item
   end
 end
