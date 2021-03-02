@@ -7,6 +7,6 @@ class AddColumnsToUser < ActiveRecord::Migration[6.0]
     add_column :users, :username, :string
     add_column :users, :birthday, :date
 
-    validates :username, uniqueness: true
+    # validates :username, uniqueness: true
   end
 end

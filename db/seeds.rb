@@ -23,3 +23,38 @@ user_email_list.length.times do |index|
   user_list << user
   puts "User #{user.id}: #{user.email} was created!"
 end
+
+item = Item.new(title:
+start_date: Faker::Time.forward(days: 23, period: :morning),
+end_date: Faker::Time.forward(days: 23, period: :evening),
+deletable: false
+editable: false
+category: "task"
+recurring: false
+completed: false
+details:
+)
+
+# title
+# image
+# start_date
+# child_id
+# details
+# deletable
+# editable
+# category
+# end_date
+# recurring
+# completed
+
+
+
+# clinic = Clinic.create!(name: "Stuart's Dentistry",
+#   location: "Meguro 1-2-4, Meguro, Tokyo",
+#   open_hours: "#{Faker::Time.backward(days: 0, period: :morning, format: :short)} - #{Faker::Time.forward(days: 0, period: :morning)}",
+#   description: "We are better than Ivan's clinic. More than half the patients that come here end up getting better. We are located in the heart of Tokyo!",
+#   # specialities: "general practice",
+#   user: user_list.sample,
+# )
+# file = URI.open('https://images.unsplash.com/photo-1567568443997-19f025355d52?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2700&q=80')
+
