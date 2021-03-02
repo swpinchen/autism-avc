@@ -1,5 +1,6 @@
 <% if @items.any? %>
   <%@items.each do |item|%>
-    <%= item.title %>
+    <%= link_to item.title, item_path(item), class: "btn" %>
+    <%= item.details %>
   <% end %>
 <% end %>
