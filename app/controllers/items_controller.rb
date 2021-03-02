@@ -3,8 +3,7 @@ class ItemsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    # @tasks = policy_scope(Task)
-    @items = Item.all
+    @items = policy_scope(Item)
   end
 
   def show
