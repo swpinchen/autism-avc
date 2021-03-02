@@ -1,4 +1,6 @@
-<%@items.each do |item|%>
-  <%= #render 'clinics/card', clinic: clinic %>
-  <%= item.name %>
-<%= end %>
+<% if items.any? %>
+  <%@items.each do |item|%>
+    <%= #render 'clinics/card', clinic: clinic %>
+    <%= item.name %>
+  <% end %>
+<% end %>
