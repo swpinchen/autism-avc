@@ -4,8 +4,10 @@
   <div class="col-12 col-lg-7">
     <h2 class="my-3"></h2>
     <div class="cards">
-      <%@items.each do |item|%>
-        <%= render 'shared/card', item: item %>
+      <% if @items.any? %>
+        <%@items.each do |item|%>
+          <%= render 'shared/card', item: item %>
+        <% end %>
       <% end %>
     </div>
   </div>
