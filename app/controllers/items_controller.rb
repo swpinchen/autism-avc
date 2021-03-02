@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
   before_action :set_task, only: [:show, :update]
+  skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
     # @tasks = policy_scope(Task)
