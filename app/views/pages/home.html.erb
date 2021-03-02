@@ -1,15 +1,25 @@
-<h1>Pages#home</h1>
-<div class="row justify-content-between pl-3">
-  <div class="col-12 col-lg-7">
-    <h2 class="my-3"></h2>
-    <div class="cards">
-      <% if @items.any? %>
-        <%@items.each do |item|%>
-          <%= render 'shared/card', item: item %>
-        <% end %>
-      <% end %>
+<div class="container mt-3">
+  <div class="row dashboard">
+    <div class="col-8">
+      <div class="summary">
+        <div class="container d-flex justify-content-around info-api" style="padding: 16px;">
+          <div class="weather">
+          <!--Weather API here-->
+          <%= image_tag 'cloudy.png', height: 175, width: 175 %>
+          </div>
+          <div class="day-of-week">
+          <!--Calendar API here-->
+          <%= image_tag 'calendar.png', height: 175, width: 175 %>
+          </div>
+        </div>
+        <!--<%= render 'shared/card' %>
+        <%= render 'shared/card' %>-->
+      </div>
     </div>
-  </div>
-  <div class="col-12 col-lg-5 mt-3">
+    <div class="col-4">
+      <div class="summary">
+        <h2>To do</h2>
+      </div>
+    </div>
   </div>
 </div>
