@@ -1,15 +1,97 @@
 <div class="row justify-content-between pl-3">
-  <div class="col-12">
-    <div class="text-center pt-3">
+  <div class="d-flex">
+    <div class="col-md-5ths col-xs-6 card">
+      <p class="my-3 text-center">Monday</p>
+      <div class="cards">
+      <% if @items.any? %>
+        <%@items.each do |item|%>
+  
+          <%= render 'shared/card', item: item %>
+  
+       <%end%>
+      <% end %>
+  
+      </div>
     </div>
-    <h2 class="my-3"></h2>
-    <div class="cards">
-      <%@items.each do |item|%>
-
-        <%= render 'shared/card', item: item %>
-
-     <%end%>
-
+    <div class="col-md-5ths col-xs-6 card">
+      <p class="my-3 text-center">Tuesday</p>
+      <div class="inner">
+        <div class="cards">
+        <% if @items.any? %>
+          <%@items.each do |item|%>
+    
+            <%= render 'shared/card', item: item %>
+    
+         <%end%>
+        <% end %>
+    
+        </div>
+      </div>
+    </div>
+    <div class="col-md-5ths col-xs-6 card">
+      <p class="my-3 text-center">Wednesday</p>
+      <div class="cards">
+      <% if @items.any? %>
+        <%@items.each do |item|%>
+  
+          <%= render 'shared/card', item: item %>
+  
+       <%end%>
+      <% end %>
+  
+      </div>
+    </div>
+    <div class="col-md-5ths col-xs-6 card">
+      <p class="my-3 text-center">Thursday</p>
+      <div class="cards">
+      <% if @items.any? %>
+        <%@items.each do |item|%>
+  
+          <%= render 'shared/card', item: item %>
+  
+       <%end%>
+      <% end %>
+  
+      </div>
+    </div>
+    <div class="col-md-5ths col-xs-6 card">
+      <p class="my-3 text-center">Friday</p>
+      <div class="cards">
+      <% if @items.any? %>
+        <%@items.each do |item|%>
+  
+          <%= render 'shared/card', item: item %>
+  
+       <%end%>
+      <% end %>
+  
+      </div>
+    </div>
+    <div class="col-md-5ths col-xs-6 card">
+      <p class="my-3 text-center">Saturday</p>
+      <div class="cards">
+      <% if @items.any? %>
+        <%@items.each do |item|%>
+  
+          <%= render 'shared/card', item: item %>
+  
+       <%end%>
+      <% end %>
+  
+      </div>
+    </div>
+    <div class="col-md-5ths col-xs-6 card">
+      <p class="my-3 text-center">Sunday</p>
+      <div class="cards">
+      <% if @items.any? %>
+        <%@items.each do |item|%>
+  
+          <%= render 'shared/card', item: item %>
+  
+       <%end%>
+      <% end %>
+  
+      </div>
     </div>
   </div>
 </div>
