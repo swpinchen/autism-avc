@@ -8,5 +8,4 @@ class Item < ApplicationRecord
   validates :end_date, presence: true
   validates :recurring, default: false
   validates :completed, default: false
-
 end

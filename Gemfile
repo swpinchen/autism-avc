@@ -32,6 +32,7 @@ gem 'devise'
 
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
+gem 'ledermann-rails-settings', require: 'rails-settings'
 gem "simple_calendar", "~> 2.4"
 gem 'simple_form'
 group :development, :test do
