@@ -13,6 +13,7 @@
           </div>
         </div>
         <div class="item-summary">
+          <!--Hardcoded, change later-->
           <%= render 'shared/card' %>
           <%= render 'shared/card' %>
           <%= render 'shared/card' %>
@@ -21,11 +22,13 @@
       </div>
     </div>
     <div class="col-4">
-      <div class="summary-cal">
-        <h2>To do</h2>
-      </div>
+      <%= link_to items_path do %>
+        <div class="summary-cal">
+          <h2>To do 1</h2>
+        </div>
+      <%end%>
       <div class="summary-cal mt-3">
-        <h2>To do</h2>
+        <h2>To do 2</h2>
       </div>
     </div>
   </div>
