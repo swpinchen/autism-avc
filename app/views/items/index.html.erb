@@ -1,6 +1,15 @@
-<% if @items.any? %>
-  <%@items.each do |item|%>
-    <%= link_to item.title, item_path(item), class: "btn" %>
-    <%= item.details %>
-  <% end %>
-<% end %>
+<div class="row justify-content-between pl-3">
+  <div class="col-12">
+    <div class="text-center pt-3">
+    </div>
+    <h2 class="my-3"></h2>
+    <div class="cards">
+      <%@items.each do |item|%>
+
+        <%= render 'shared/card', item: item %>
+
+     <%end%>
+
+    </div>
+  </div>
+</div>
