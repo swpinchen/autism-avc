@@ -4,19 +4,18 @@
       <div class="summary">
         <div class="container d-flex justify-content-around info-api" style="padding: 16px;">
           <div class="weather">
-          <!--Weather API here-->
-          <%= image_tag 'cloudy.png', height: 175, width: 175 %>
+            <!--Weather API here-->
+            <%= image_tag 'cloudy.png', height: 175, width: 175 %>
           </div>
           <div class="day-of-week">
-          <!--Calendar API here-->
-          <%= image_tag 'calendar.png', height: 175, width: 175 %>
+            <!--Calendar API here-->
+            <%= image_tag 'calendar.png', height: 175, width: 175 %>
           </div>
         </div>
         <div class="item-summary">
-          <%= render 'shared/card' %>
-          <%= render 'shared/card' %>
-          <%= render 'shared/card' %>
-          <%= render 'shared/card' %>
+          <% @items.each do |item| %>
+            <%= render 'shared/card', review: @review, item: item %>
+          <% end %>
         </div>
       </div>
     </div>

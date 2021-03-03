@@ -2,10 +2,24 @@
   <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
   <div class="card-trip-infos">
     <span class="emogies">
-      <i class="fa fa-sad-cry"></i>
-      <i class="fa fa-frown-open"></i>
-      <i class="fa fa-laugh-squint"></i>
-      <i class="fa fa-grin-hearts"></i>
+      <%if item.reviews.any? %>
+        <% if item.reviews.last.rating == 1 %>
+          <i class="fa fa-sad-cry"></i>
+          <%# elsif %>
+        <% end %>
+      <% else %>
+        <%= simple_form_for [item, @review] do |f|%>
+          <%# <%= f.input :date, as: :hidden, input_html:{ value: item.start_date } %>
+          <%= f.input :rating, as: :hidden, input_html:{ value: 1 } %>
+          <button class="fa fa-sad-cry"></button>
+        <% end %>
+        <%= simple_form_for [item, @review] do |f|%>
+          <%= f.input :rating, as: :hidden, input_html:{ value: 2 } %>
+          <button class="fa fa-frown-open"></button>
+        <% end %>
+        <i class="fa fa-laugh-squint"></i>
+        <i class="fa fa-grin-hearts"></i>
+      <% end %>
     </span>
   </div>
 </div>
