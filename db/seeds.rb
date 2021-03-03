@@ -30,7 +30,7 @@ user_email_list.length.times do |index|
   user_list << user
   puts "User #{user.id}: #{user.email} was created!"
   image_array.each do |image|
-    item = Item.new(title: "Task name", start_date: DateTime.now, end_date: DateTime.new(2021, 3, rand(8..12)), category: "task,", details: Faker::Movies::StarWars.quote)
+    item = Item.new(title: "Task name", start_date: DateTime.new(2021, 3, rand(1..7)), end_date: DateTime.new(2021, 3, rand(1..7)), category: "task,", details: Faker::Movies::StarWars.quote)
     item.user = user
     file = URI.open(image)
     item.photo.attach(io: file, filename: 'first.png', content_type: 'image/png')
