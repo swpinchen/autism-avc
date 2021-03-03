@@ -4,5 +4,20 @@
   border-radius: 16px;
   height: 85vh;
   text-align: center;
+  padding: 16px;
+}
+
+.summary-cal{
+  background-color: #F4F4F4;
+  border-radius: 16px;
+  height: 41vh;
+  text-align: center;
+  padding: 16px;
+}
+
+.item-summary{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 8px;
 }
 
