@@ -1,63 +1,63 @@
-// Import your components CSS files here.
-@import "alert";
-@import "avatar";
-@import "navbar";
-@import "card";
-.daily {
-		// position: relative;
-		// min-height: 1px;
-		// padding-right: 15px;
-		// padding-left: 15px;
-		 // width: 700px;
-		.card-trip {
-			width: 250px;
-		}
-}
-
-.weekly {
-	overflow-x: scroll;
-	white-space: nowrap;
-	width: 100%;
-}
-.col-xs-5ths {
-		width: 20%;
-		float: left;
-}
-
-.daycontainer{
-	margin: 5px;
-	padding: 5px;
-	border-radius: 5px;
-	box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-	display: inline-block;
-}
-
-.inner{
-	margin: 1px;
-	padding: 1px;
-	border-radius: 5px;
-	border-style: solid;
-	border-width: .1px;
-	border-color: #d0d0d0;
-	background-color: #f3f3f3;
-}
-@media (min-width: 768px) {
-		.col-sm-5ths {
-				width: 20%;
-				float: left;
-		}
-}
-
-@media (min-width: 992px) {
-		.col-md-5ths {
-				width: 20%;
-				float: left;
-		}
-}
-
-@media (min-width: 1200px) {
-		.col-lg-5ths {
-				width: 20%;
-				float: left;
-		}
-}
+// // Import your components CSS files here.
+// @import "alert";
+// @import "avatar";
+// @import "navbar";
+// @import "card";
+// .daily {
+// 		// position: relative;
+// 		// min-height: 1px;
+// 		// padding-right: 15px;
+// 		// padding-left: 15px;
+// 		 // width: 700px;
+// 		.card-trip {
+// 			width: 250px;
+// 		}
+// }
+// 
+// .weekly {
+// 	overflow-x: scroll;
+// 	white-space: nowrap;
+// 	width: 100%;
+// }
+// .col-xs-5ths {
+// 		width: 20%;
+// 		float: left;
+// }
+// 
+// .daycontainer{
+// 	margin: 5px;
+// 	padding: 5px;
+// 	border-radius: 5px;
+// 	box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+// 	display: inline-block;
+// }
+// 
+// .inner{
+// 	margin: 1px;
+// 	padding: 1px;
+// 	border-radius: 5px;
+// 	border-style: solid;
+// 	border-width: .1px;
+// 	border-color: #d0d0d0;
+// 	background-color: #f3f3f3;
+// }
+// @media (min-width: 768px) {
+// 		.col-sm-5ths {
+// 				width: 20%;
+// 				float: left;
+// 		}
+// }
+// 
+// @media (min-width: 992px) {
+// 		.col-md-5ths {
+// 				width: 20%;
+// 				float: left;
+// 		}
+// }
+// 
+// @media (min-width: 1200px) {
+// 		.col-lg-5ths {
+// 				width: 20%;
+// 				float: left;
+// 		}
+// }
