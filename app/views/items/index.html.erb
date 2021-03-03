@@ -1,74 +1,9 @@
-<div class="row justify-content-between pl-3">
-  <div class="d-flex weekly">
-    <div class="daycontainer display-inline-block daily">
-      <p class="my-3 text-center">Monday</p>
-      <div class="cards">
-        <% if @items.any? %>
-          <%@items.each do |item|%>
-            <%= render 'shared/card', review: @review, item: item %>
-          <%end%>
-        <% end %>
-      </div>
+<div class="week">
+  <%= week_calendar(number_of_weeks: 1) do |date| %>
+    <div class="daycontainer">
+      <% @items.each do |item|  %>
+        <%= render 'shared/card', item: item if item.start_date.to_date == date%>
+      <% end %>
     </div>
-    <div class="daycontainer daily">
-      <p class="my-3 text-center">Tuesday</p>
-      <div class="cards">
-        <% if @items.any? %>
-          <%@items.each do |item|%>
-            <%= render 'shared/card', review: @review, item: item %>
-          <%end%>
-        <% end %>
-      </div>
-    </div>
-    <div class="daycontainer daily">
-      <p class="my-3 text-center">Wednesday</p>
-      <div class="cards">
-        <% if @items.any? %>
-          <%@items.each do |item|%>
-            <%= render 'shared/card', review: @review, item: item %>
-          <%end%>
-        <% end %>
-      </div>
-    </div>
-    <div class="daycontainer daily">
-      <p class="my-3 text-center">Thursday</p>
-      <div class="cards">
-        <% if @items.any? %>
-          <%@items.each do |item|%>
-            <%= render 'shared/card', review: @review, item: item %>
-          <%end%>
-        <% end %>
-      </div>
-    </div>
-    <div class="daycontainer daily">
-      <p class="my-3 text-center">Friday</p>
-      <div class="cards">
-        <% if @items.any? %>
-          <%@items.each do |item|%>
-            <%= render 'shared/card', review: @review, item: item %>
-          <%end%>
-        <% end %>
-      </div>
-    </div>
-    <div class="daycontainer daily">
-      <p class="my-3 text-center">Saturday</p>
-      <div class="cards">
-        <% if @items.any? %>
-          <%@items.each do |item|%>
-            <%= render 'shared/card', review: @review, item: item %>
-          <%end%>
-        <% end %>
-      </div>
-    </div>
-    <div class="daycontainer daily">
-      <p class="my-3 text-center">Sunday</p>
-      <div class="cards">
-        <% if @items.any? %>
-          <%@items.each do |item|%>
-            <%= render 'shared/card', review: @review, item: item %>
-          <%end%>
-        <% end %>
-      </div>
-    </div>
-  </div>
+  <% end %>
 </div>
