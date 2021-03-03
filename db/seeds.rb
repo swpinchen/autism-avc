@@ -19,6 +19,8 @@ Item.destroy_all
 puts 'All items deleted'
 User.destroy_all
 puts 'All users deleted.'
+Review.detroy_all
+puts 'All reviews deleted'
 
 
 puts 'Creating users...'
