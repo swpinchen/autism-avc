@@ -15,6 +15,8 @@ image_array = [
   'https://images.unsplash.com/photo-1498837167922-ddd27525d352?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mnx8Zm9vZHxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60'
 ]
 puts 'Cleaning up db...'
+Review.destroy_all
+puts 'All reviews deleted'
 Item.destroy_all
 puts 'All items deleted'
 User.destroy_all
