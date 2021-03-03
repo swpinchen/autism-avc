@@ -3,3 +3,55 @@
 @import "avatar";
 @import "navbar";
 @import "card";
+.col-xs-5ths,
+.col-sm-5ths,
+.col-md-5ths,
+.col-lg-5ths {
+		position: relative;
+		min-height: 1px;
+		padding-right: 15px;
+		padding-left: 15px;
+		width: 20%;
+}
+
+.col-xs-5ths {
+		width: 20%;
+		float: left;
+}
+
+.card{
+	margin: 5px;
+	padding: 5px;
+	border-radius: 5px;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.inner{
+	margin: 1px;
+	padding: 1px;
+	border-radius: 5px;
+	border-style: solid;
+	border-width: .1px;
+	border-color: #d0d0d0;
+	background-color: #f3f3f3;
+}
+@media (min-width: 768px) {
+		.col-sm-5ths {
+				width: 20%;
+				float: left;
+		}
+}
+
+@media (min-width: 992px) {
+		.col-md-5ths {
+				width: 20%;
+				float: left;
+		}
+}
+
+@media (min-width: 1200px) {
+		.col-lg-5ths {
+				width: 20%;
+				float: left;
+		}
+}
