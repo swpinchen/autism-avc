@@ -1,11 +1,9 @@
 <div class="week">
   <%= week_calendar(number_of_weeks: 1) do |date| %>
     <div class="daycontainer">
-    <% @items.each do |item|  %>
-      <%= link_to item_path(item) do %>
+      <% @items.each do |item|  %>
         <%= render 'shared/card', item: item if item.start_date.to_date == date%>
       <% end %>
-    <% end %>
     </div>
   <% end %>
 </div>

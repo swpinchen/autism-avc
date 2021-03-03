@@ -7,15 +7,15 @@ class ReviewsController < ApplicationController
   def new
     @review = Review.new
     @item = Item.find(params[:item_id])
-    # authorize @review
+    authorize @review
   end
 
   def create
     @review = Review.create(review_params)
     @item = Item.find(params[:item_id])
     @review.item = @item
-    @review.user = current_user
-    # authorize @review
+    # @review.user = current_user
+    authorize @review
     if @review.save
       redirect_to item_path(@review.item)
     else

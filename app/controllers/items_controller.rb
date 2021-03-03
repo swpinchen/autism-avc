@@ -4,6 +4,7 @@ class ItemsController < ApplicationController
 
   def index
     @items = policy_scope(Item)
+    @review = Review.new
   end
 
   def show

@@ -3,5 +3,7 @@ class PagesController < ApplicationController
 
   def home
     @items = Item.all
+    @review = Review.new
   end
+
 end
