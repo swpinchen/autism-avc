@@ -13,9 +13,7 @@
           </div>
         </div>
         <div class="item-summary">
-          <% @items.each do |item| %>
-            <%= render 'shared/card', review: @review, item: item %>
-          <% end %>
+          <%= render 'shared/card', review: @review, item: item %>
         </div>
       </div>
     </div>
