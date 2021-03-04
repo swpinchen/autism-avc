@@ -26,21 +26,18 @@
         <% end %>
         <%= simple_form_for [item, @review] do |f|%>
           <%= f.input :rating, as: :hidden, input_html:{ value: 2 } %>
-          <%# <button class="fa fa-frown-open"></button> %>
           <%= f.button :button do %>
             <i class="fa fa-frown-open"></i>
           <% end %>
         <% end %>
         <%= simple_form_for [item, @review] do |f|%>
           <%= f.input :rating, as: :hidden, input_html:{ value: 3 } %>
-          <%# <button class="fa fa-laugh-squint"></button> %>
           <%= f.button :button do %>
             <i class="fa fa-laugh-squint"></i>
           <% end %>
         <% end %>
         <%= simple_form_for [item, @review] do |f|%>
           <%= f.input :rating, as: :hidden, input_html:{ value: 4 } %>
-          <%# <button class="fa fa-grin-hearts"></button> %>
           <%= f.button :button do %>
             <i class="fa fa-grin-hearts"></i>
           <% end %>
