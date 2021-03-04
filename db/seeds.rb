@@ -14,6 +14,15 @@ image_array = [
   'https://images.unsplash.com/photo-1574629810360-7efbbe195018?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8c29jY2VyfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60',
   'https://images.unsplash.com/photo-1498837167922-ddd27525d352?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mnx8Zm9vZHxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60'
 ]
+
+title_array = [
+  'School',
+  'Park',
+  'Groceries',
+  'Dishes',
+  'Football',
+  'Cooking'
+]
 puts 'Cleaning up db...'
 Review.destroy_all
 puts 'All reviews deleted'
@@ -31,8 +40,8 @@ user_email_list.length.times do |index|
   user = User.create!(email: user_email_list[index], password: "password", name: Faker::Name.name, birthday: Date.new(rand(2011..2015), rand(1..12), rand(1..28)), username: user_email_list[index].match(/(\S+)(@)(\S+)/)[1])
   user_list << user
   puts "User #{user.id}: #{user.email} was created!"
-  image_array.each do |image|
-    item = Item.new(title: "Task name", start_date: DateTime.new(2021, 3, rand(1..7)), end_date: DateTime.new(2021, 3, rand(1..7)), category: "task,", details: Faker::Movies::StarWars.quote)
+  image_array.each_with_index do |image, index|
+    item = Item.new(title: title_array[index], start_date: DateTime.new(2021, 3, rand(1..7)), end_date: DateTime.new(2021, 3, rand(1..7)), category: "task,", details: Faker::Movies::StarWars.quote)
     item.user = user
     file = URI.open(image)
     item.photo.attach(io: file, filename: 'first.png', content_type: 'image/png')
