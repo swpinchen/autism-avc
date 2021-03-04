@@ -13,6 +13,8 @@
 	white-space: nowrap;
 	width: 100%;
 	min-width: 250px;
+	height: 100vh;
+	position: fixed;
 }
 
 .daycontainer{
@@ -24,4 +26,8 @@
 	width: 270px;
 	height: 80vh;
 	overflow-y: scroll;
+}
+
+.simple-calendar{
+	height: 100vh;
 }
