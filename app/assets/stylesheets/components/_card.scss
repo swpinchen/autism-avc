@@ -7,10 +7,18 @@
   flex-direction: column;
 }
 
-.itemimage {
+img {
   height: 150px;
   width: 100%;
   object-fit: cover;
+}
+
+.itemlink {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
 }
 
 .card-trip h2 {
