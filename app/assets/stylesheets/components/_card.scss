@@ -7,6 +7,15 @@
   flex-direction: column;
 }
 
+.card-trip-selected {
+  overflow: hidden;
+  background: #ecf9ff;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
 
 .card-image {
   height: 150px;
@@ -62,20 +71,20 @@
   color: #e70a0a;
   padding-top: 3px;
   font-size: 24px;
-
+  padding-right: 5px;
 }
 .fa-frown-open {
   color: hsl(59, 94%, 36%);
   padding-top: 3px;
   font-size: 24px;
-
+  padding-right: 5px;
 
 }
 .fa-laugh-squint {
   color: #ff9f1c;
   padding-top: 3px;
   font-size: 24px;
-
+  padding-right: 5px;
 }
 
 .fa-grin-hearts {
