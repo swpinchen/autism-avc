@@ -1,4 +1,6 @@
 // Specific CSS for your home-page
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 .summary{
   background-color: #F4F4F4;
   border-radius: 16px;
@@ -21,3 +23,21 @@
   grid-gap: 8px;
 }
 
+.day-of-week{
+  background-image: url('../../../assets/calendar.png');
+  width: 175px;
+  height: 175px;
+  background-size: cover;
+  position: relative;
+  p{
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    color: black;
+    font-family: 'Roboto', sans-serif;
+    font-size: 60px;
+  }
+}
