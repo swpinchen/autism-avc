@@ -1,5 +1,8 @@
 <div class="card-trip">
-  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+  <div class="position-relative">
+    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+    <%= link_to '', item_path(item), class: "itemimage" %>
+  </div>
   <div class="card-trip-infos">
     <span class="emogies">
       <%if item.reviews.any? %>
