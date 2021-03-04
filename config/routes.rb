@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'settings/change'
   devise_for :users
   root to: 'pages#home'
   resources :items do
