@@ -6,7 +6,7 @@
             <% if item.title == 'School' %>
               <%= render 'shared/selectedcard', item: item if item.start_date.to_date == date%>
             <% else %>
-              <%= render 'shared/regularcard', item: item if item.start_date.to_date == date%>
+              <%= render 'shared/card', item: item if item.start_date.to_date == date%>
             <% end %>
           <% end %>
         <% end %>
