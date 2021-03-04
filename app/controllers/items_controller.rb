@@ -5,6 +5,7 @@ class ItemsController < ApplicationController
   def index
     @items = policy_scope(Item)
     @review = Review.new
+    @selected = Item.find(params[:item])
   end
 
   def show
