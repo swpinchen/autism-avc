@@ -18,7 +18,10 @@ class ReviewsController < ApplicationController
     authorize @review
     if @review.save
       if @review.rating == 1
-        redirect_to item_path(@item)
+        # @happy = Item.where(reviews.rating)
+        @reviewed_items = Item.all.select{|item| item.reviews.any?}
+        @happy = @reviewed_items.sort_by{ |item| item.reviews.last.rating }.last
+        redirect_to item_path(@happy)
       else
         redirect_to items_path
       end

@@ -9,3 +9,4 @@ class Item < ApplicationRecord
   validates :recurring, default: false
   validates :completed, default: false
 end
+
