@@ -19,7 +19,10 @@
         <%= simple_form_for [item, @review] do |f|%>
           <%# <%= f.input :date, as: :hidden, input_html:{ value: item.start_date } %>
           <%= f.input :rating, as: :hidden, input_html:{ value: 1 } %>
-          <button class="fa fa-sad-cry"></button>
+          <%# <button class="fa fa-sad-cry"></button> %>
+          <%= f.button :button do %>
+            <i class="fa fa-sad-cry"></i>
+          <% end %>
         <% end %>
         <%= simple_form_for [item, @review] do |f|%>
           <%= f.input :rating, as: :hidden, input_html:{ value: 2 } %>

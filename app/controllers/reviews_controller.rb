@@ -17,7 +17,11 @@ class ReviewsController < ApplicationController
     # @review.user = current_user
     authorize @review
     if @review.save
-      redirect_to item_path(@review.item)
+      if @review.rating == 1
+        redirect_to item_path(@item)
+      else
+        redirect_to items_path
+      end
     else
       render :new
     end
