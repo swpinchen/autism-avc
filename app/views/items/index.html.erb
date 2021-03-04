@@ -3,8 +3,12 @@
     <div class="daycontainer">
         <% @items.each do |item|  %>
           <%= link_to item_path(item) do %>
-            <% if item.title == @selected.title %>
-              <%= render 'shared/selectedcard', item: item if item.start_date.to_date == date%>
+            <% unless @selected == nil %>
+              <% if item.title == @selected.title %>
+                <%= render 'shared/selectedcard', item: item if item.start_date.to_date == date%>
+              <% else %>
+                <%= render 'shared/card', item: item if item.start_date.to_date == date%>
+              <% end %>
             <% else %>
               <%= render 'shared/card', item: item if item.start_date.to_date == date%>
             <% end %>
