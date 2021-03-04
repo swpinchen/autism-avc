@@ -41,3 +41,14 @@
     font-size: 60px;
   }
 }
+
+.dashboard-btn{
+  padding: 80px;
+  font-size: 80px;
+  text-decoration: none;
+  margin: 0px;
+  color: black;
+  &:hover{
+    color: black;
+  }
+}
