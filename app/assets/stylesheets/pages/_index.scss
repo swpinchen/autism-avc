@@ -5,7 +5,6 @@
 	min-height: 200px;
 	margin: 5px;
 	margin-top: 10px;
-
 }
 
 .week {
@@ -29,6 +28,19 @@
 	position-y:fixed;
 }
 
+.text-center{
+	font-size: 24px;
+	padding: 0;
+}
 .simple-calendar{
 	height: 100vh;
+}
+
+.table th, .table td {
+	padding-left: 0.75rem;
+	padding-right: 0.75rem;
+	padding-bottom: 0.25rem;
+	padding-top: 0.25rem;
+	vertical-align: top;
+	border-top: 1px solid #dee2e6;
 }
