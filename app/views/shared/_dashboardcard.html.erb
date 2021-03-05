@@ -1,51 +1,48 @@
 <div class="card-trip">
-	<div class="position-relative">
-		<%= cl_image_tag item.photo.key, :class => "card-image" %>
-		<%= link_to '', items_path(item: item), class: "itemlink" %>
-	</div>
-	<div class="card-trip-infos">
-		<span class="emogies">
-			<%if item.reviews.any? %>
-				<% if item.reviews.last.rating == 1 %>
-					<i class="fa fa-sad-cry"></i>
-				<% elsif item.reviews.last.rating == 2 %>
-					<i class="fa fa-frown-open"></i>
-				<% elsif item.reviews.last.rating == 3 %>
-					<i class="fa fa-laugh-squint"></i>
-				<% elsif item.reviews.last.rating == 4 %>
-					<i class="fa fa-grin-hearts"></i>
-				<% end %>
-			<% else %>
-				<%= simple_form_for [item, @review] do |f|%>
-					<%# <%= f.input :date, as: :hidden, input_html:{ value: item.start_date } %>
-					<%= f.input :rating, as: :hidden, input_html:{ value: 1 } %>
-					<%# <button class="fa fa-sad-cry"></button> %>
-					<%= f.button :button do %>
-						<i class="fa fa-sad-cry"></i>
-					<% end %>
-				<% end %>
-				<%= simple_form_for [item, @review] do |f|%>
-					<%= f.input :rating, as: :hidden, input_html:{ value: 2 } %>
-					<%# <button class="fa fa-frown-open"></button> %>
-					<%= f.button :button do %>
-						<i class="fa fa-frown-open"></i>
-					<% end %>
-				<% end %>
-				<%= simple_form_for [item, @review] do |f|%>
-					<%= f.input :rating, as: :hidden, input_html:{ value: 3 } %>
-					<%# <button class="fa fa-laugh-squint"></button> %>
-					<%= f.button :button do %>
-						<i class="fa fa-laugh-squint"></i>
-					<% end %>
-				<% end %>
-				<%= simple_form_for [item, @review] do |f|%>
-					<%= f.input :rating, as: :hidden, input_html:{ value: 4 } %>
-					<%# <button class="fa fa-grin-hearts"></button> %>
-					<%= f.button :button do %>
-						<i class="fa fa-grin-hearts"></i>
-					<% end %>
-				<% end %>
-			<% end %>
-		</span>
-	</div>
+  <div class="position-relative">
+    <%= cl_image_tag item.photo.key, :class => "card-image" %>
+    <%= link_to '', items_path(item: item), class: "itemlink" %>
+  </div>
+  <div class="card-trip-infos">
+    <span class="emogies">
+      <%if item.reviews.any? %>
+        <% if item.reviews.last.rating == 1 %>
+          <i class="fa fa-sad-cry"></i>
+        <% elsif item.reviews.last.rating == 2 %>
+          <i class="fa fa-frown-open"></i>
+        <% elsif item.reviews.last.rating == 3 %>
+          <i class="fa fa-laugh-squint"></i>
+        <% elsif item.reviews.last.rating == 4 %>
+          <i class="fa fa-grin-hearts"></i>
+        <% end %>
+      <% else %>
+        <%= simple_form_for [item, @review] do |f|%>
+          <%# <%= f.input :date, as: :hidden, input_html:{ value: item.start_date } %>
+          <%= f.input :rating, as: :hidden, wrapper_html:{ class: "m-0" }, input_html:{ value: 3} %>
+          <%# <button class="fa fa-sad-cry"></button> %>
+          <%= f.button :button, class: "py-0" do %>
+            <i class="fa fa-sad-cry"></i>
+          <% end %>
+        <% end %>
+        <%= simple_form_for [item, @review] do |f|%>
+          <%= f.input :rating, as: :hidden, wrapper_html:{ class: "m-0" }, input_html:{ value: 3} %>
+          <%= f.button :button, class: "py-0" do %>
+            <i class="fa fa-frown-open"></i>
+          <% end %>
+        <% end %>
+        <%= simple_form_for [item, @review] do |f|%>
+          <%= f.input :rating, as: :hidden, wrapper_html:{ class: "m-0" }, input_html:{ value: 3} %>
+          <%= f.button :button, class: "py-0" do %>
+            <i class="fa fa-laugh-squint"></i>
+          <% end %>
+        <% end %>
+        <%= simple_form_for [item, @review] do |f|%>
+          <%= f.input :rating, as: :hidden, wrapper_html:{ class: "m-0" }, input_html:{ value: 3} %>
+          <%= f.button :button, class: "py-0" do %>
+            <i class="fa fa-grin-hearts"></i>
+          <% end %>
+        <% end %>
+      <% end %>
+    </span>
+  </div>
 </div>
