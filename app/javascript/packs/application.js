@@ -45,6 +45,7 @@ const rateValue = document.querySelector('#rate-value');
 const pitch = document.querySelector('#pitch');
 const pitchValue = document.querySelector('#pitch-value');
 const body = document.querySelector('main');
+const items = document.querySelectorAll("img");
 
 //Browser identifier
 // Firefox 1.0+
@@ -131,6 +132,17 @@ const speak = () => {
 days.forEach( day => {
   day.addEventListener("click", function( event ) {
     speakText = new SpeechSynthesisUtterance(day.innerHTML);
+    speakText.rate = 1;
+    speakText.pitch = 1;
+    speakText.lang = "en-US";
+    synth.speak(speakText)
+  }, false);
+});
+
+items.forEach( item => {
+  item.addEventListener("click", function( event ) {
+    console.log(item.title)
+    speakText = new SpeechSynthesisUtterance(item.title);
     speakText.rate = 1;
     speakText.pitch = 1;
     speakText.lang = "en-US";
