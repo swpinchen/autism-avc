@@ -46,6 +46,7 @@ const pitch = document.querySelector('#pitch');
 const pitchValue = document.querySelector('#pitch-value');
 const body = document.querySelector('main');
 const items = document.querySelectorAll("img");
+const details = document.querySelector(".details");
 
 //Browser identifier
 // Firefox 1.0+
@@ -129,6 +130,15 @@ const speak = () => {
 
 // EVENT LISTENERS
 
+const readDetails = () => {
+  console.log(details.innerText)
+    speakText = new SpeechSynthesisUtterance(details.innerText);
+    speakText.rate = 1;
+    speakText.pitch = 1;
+    speakText.lang = "en-US";
+    synth.speak(speakText)
+};
+
 days.forEach( day => {
   day.addEventListener("click", function( event ) {
     speakText = new SpeechSynthesisUtterance(day.innerHTML);
@@ -141,14 +151,17 @@ days.forEach( day => {
 
 items.forEach( item => {
   item.addEventListener("click", function( event ) {
-    console.log(item.title)
+    console.log(details.innerText)
     speakText = new SpeechSynthesisUtterance(item.title);
     speakText.rate = 1;
     speakText.pitch = 1;
     speakText.lang = "en-US";
     synth.speak(speakText)
+    readDetails();
   }, false);
 });
+
+
 
 
 // Voice settings form submit
