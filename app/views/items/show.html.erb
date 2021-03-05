@@ -2,7 +2,7 @@
   <div class="big-card">
    <div class="card-trip">
      <div class="position-relative">
-       <%= cl_image_tag @item.photo.key, :class => "card-image", :title => @item.title %>
+       <%= cl_image_tag @item.photo.key, :class => "card-image", :title => @item.title, :details => @item.details%>
      </div>
      <div class="card-trip-infos">
        <span class="emogies">

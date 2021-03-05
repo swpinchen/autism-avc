@@ -150,6 +150,7 @@ items.forEach( item => {
   }, false);
 });
 
+
 // Voice settings form submit
 // if (textForm !== null) {
 //   textForm.addEventListener('submit', e => {
