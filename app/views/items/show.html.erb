@@ -1,2 +1,7 @@
-<%= @item.title %>
-<%= @item.details %>
+<div class="container">
+  <%= @item.title %>
+  <div class="big-card">
+    <%= render 'shared/card', item: @item %>
+  </div>
+  <%= @item.details %>
+</div>
