@@ -23,6 +23,15 @@ title_array = [
   'Football',
   'Cooking'
 ]
+
+detail_array = [
+  'Have a wonderful day at school, from mummy and daddy',
+  'Get ready to play with your friends',
+  'Shopping with mummy',
+  'Remember to put the plates in the drying rack',
+  'Time to kick the ball around',
+  'Lets cook pasta with daddy'
+]
 puts 'Cleaning up db...'
 Review.destroy_all
 puts 'All reviews deleted'
@@ -41,7 +50,7 @@ user_email_list.length.times do |index|
   user_list << user
   puts "User #{user.id}: #{user.email} was created!"
   image_array.each_with_index do |image, index|
-    item = Item.new(title: title_array[index], start_date: DateTime.new(2021, 3, rand(1..7)), end_date: DateTime.new(2021, 3, rand(1..7)), category: "task,", details: Faker::Movies::StarWars.quote)
+    item = Item.new(title: title_array[index], start_date: DateTime.new(2021, 3, rand(1..7)), end_date: DateTime.new(2021, 3, rand(1..7)), category: "task,", details: detail_array[index])
     item.user = user
     file = URI.open(image)
     item.photo.attach(io: file, filename: 'first.png', content_type: 'image/png')

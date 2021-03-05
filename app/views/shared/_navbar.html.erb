@@ -1,8 +1,11 @@
 <div class="navigationbar">
   <div class="icons">
-    <%= link_to root_path, class: "home-btn" do %>
-      <i class="fas fa-bars"></i>
+    <%= link_to :back, class: "home-btn" do %>
+      <i class="fas fa-arrow-left"></i>
     <% end %>
-    <i class="fas fa-microphone-alt"></i>
+    <%= link_to root_path, class: "home-btn" do %>
+      <i class="fas fa-home"></i>
+    <% end %>
+    <i class="fas fa-microphone-alt pb-2"></i>
   </div>
 </div>
