@@ -29,6 +29,7 @@ color: #1F87E8
   grid-gap: 8px;
 }
 
+
 .day-of-week{
   background-image: asset-url('calendar.png');
   width: 175px;
@@ -44,7 +45,7 @@ color: #1F87E8
     transform: translate(-50%, -50%);
     color: black;
     font-family: 'Roboto', sans-serif;
-    font-size: 60px;
+    font-size: 30px;
   }
 }
 
