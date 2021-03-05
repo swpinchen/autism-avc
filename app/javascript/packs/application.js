@@ -144,7 +144,7 @@ items.forEach( item => {
     console.log(item.title)
     speakText = new SpeechSynthesisUtterance(item.title);
     speakText.rate = 1;
-    speakText.pitch = 2;
+    speakText.pitch = 1;
     speakText.lang = "en-US";
     synth.speak(speakText)
   }, false);
