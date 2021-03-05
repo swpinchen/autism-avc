@@ -37,7 +37,7 @@ const synth = window.speechSynthesis;
 
 // DOM Elements
 const days = document.querySelectorAll("th");
-const textForm = document.querySelector('form');
+// const textForm = document.querySelector('form');
 const textInput = document.querySelector('#text-input');
 const voiceSelect = document.querySelector('#voice-select');
 const rate = document.querySelector('#rate');
@@ -139,13 +139,13 @@ days.forEach( day => {
 });
 
 // Voice settings form submit
-if (textForm !== null) {
-  textForm.addEventListener('submit', e => {
-  e.preventDefault();
-  speak();
-  textInput.blur();
-  });
-}
+// if (textForm !== null) {
+//   textForm.addEventListener('submit', e => {
+//   e.preventDefault();
+//   speak();
+//   textInput.blur();
+//   });
+// }
 
 // Rate value change
 if (rate !== null) {
