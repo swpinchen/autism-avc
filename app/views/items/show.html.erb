@@ -16,7 +16,7 @@
            <% elsif @item.reviews.last.rating == 4 %>
              <i class="fa fa-grin-hearts"></i>
            <% end %>
-         <% else %>
+         <% elsif @item.reviews == nil %>
            <%= simple_form_for [@item, @review] do |f|%>
              <%# <%= f.input :date, as: :hidden, input_html:{ value: item.start_date } %>
              <%= f.input :rating, as: :hidden, wrapper_html:{ class: "m-0" }, input_html:{ value: 1} %>
