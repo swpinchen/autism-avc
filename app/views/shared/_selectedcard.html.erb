@@ -18,14 +18,14 @@
 			<% else %>
 				<%= simple_form_for [item, @review] do |f|%>
 					<%# <%= f.input :date, as: :hidden, input_html:{ value: item.start_date } %>
-					<%= f.input :rating, as: :hidden, wrapper_html:{ class: "m-0" }, input_html:{ value: 3} %>
+					<%= f.input :rating, as: :hidden, wrapper_html:{ class: "m-0" }, input_html:{ value: 1} %>
 					<%# <button class="fa fa-sad-cry"></button> %>
 					<%= f.button :button, class: "py-0" do %>
 						<i class="fa fa-sad-cry"></i>
 					<% end %>
 				<% end %>
 				<%= simple_form_for [item, @review] do |f|%>
-					<%= f.input :rating, as: :hidden, wrapper_html:{ class: "m-0" }, input_html:{ value: 3} %>
+					<%= f.input :rating, as: :hidden, wrapper_html:{ class: "m-0" }, input_html:{ value: 2} %>
 					<%= f.button :button, class: "py-0" do %>
 						<i class="fa fa-frown-open"></i>
 					<% end %>
@@ -37,7 +37,7 @@
 					<% end %>
 				<% end %>
 				<%= simple_form_for [item, @review] do |f|%>
-					<%= f.input :rating, as: :hidden, wrapper_html:{ class: "m-0" }, input_html:{ value: 3} %>
+					<%= f.input :rating, as: :hidden, wrapper_html:{ class: "m-0" }, input_html:{ value: 4} %>
 					<%= f.button :button, class: "py-0" do %>
 						<i class="fa fa-grin-hearts"></i>
 					<% end %>
