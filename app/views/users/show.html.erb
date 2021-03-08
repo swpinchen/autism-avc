@@ -1,13 +1,33 @@
 <div class="container">
   <div class="row dashboard">
-    <div class="col-6 profile mt-3">
-      <img src="<%=@user.url%>" style="border-radius: 50%;height: 300px;">
+    <div class="col-4 profile mt-3">
+      <img class="mb-3"src="<%=@user.url%>" style="border-radius: 50%;height: 300px;">
       <p><b>Username:</b> <%=@user.username%></p>
       <p><b>Email:</b> <%=@user.email%></p>
       <p><b>Member since:</b> <%=@user.created_at%></p>
       <button type="button" class="btn btn-outline-danger">Log out</button>
     </div>
-    <div class="col-6 info mt-3">
-      <button type="button" class="btn btn-primary">Create a task</button>
+    <div class="col-8 info mt-3">
+      <button type="button" class="btn btn-primary mb-2">Create a task</button>
+        <table class="table table-hover">
+          <thead>
+            <tr>
+            <th scope="col">Item</th>
+            <th scope="col">Description</th>
+            <th scope="col">Date</th>
+            <th scope="col">Reaction</th>
+            </tr>
+          </thead>
+          <tbody>
+          <%@items.each do |item|%>
+            <tr>
+              <th scope="row"><%=item.title%></th>
+              <td><%=item.details%></td>
+              <td><%=item.start_date%></td>
+              <td>@mdo</td>
+            </tr>
+          <%end%>
+          </tbody>
+        </table>
     </div>
 </div>
