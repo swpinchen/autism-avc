@@ -28,6 +28,19 @@
 	position-y:fixed;
 }
 
+.todaycontainer{
+	margin: 2px;
+	padding: 5px;
+	border-radius: 5px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+	display: inline-block;
+	width: 270px;
+	height: 85vh;
+	overflow-y: scroll;
+	position-y:fixed;
+	background-color: #f5f5f5;
+}
+
 .text-center{
 	font-size: 24px;
 	padding: 0;
