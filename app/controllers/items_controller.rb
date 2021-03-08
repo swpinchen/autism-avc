@@ -5,10 +5,22 @@ class ItemsController < ApplicationController
   def index
     @items = policy_scope(Item).order(:start_date)
     @review = Review.new
-    unless params[:item] == nil
-      @selected = Item.find(params[:item])
+    if params[:query].blank?
+      # If no search
+      @selected = Item.find(params[:item]) unless params[:item].nil?
+    else
+      # If pg search
+      @selected = Item.search_by_title(params[:query]).first
     end
   end
+
+  # def index
+  #   @items = policy_scope(Item).order(:start_date)
+  #   @review = Review.new
+  #   unless params[:item] == nil
+  #     @selected = Item.find(params[:item])
+  #   end
+  # end
 
   def show
     @review = Review.new
