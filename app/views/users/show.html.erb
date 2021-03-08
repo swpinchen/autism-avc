@@ -1,4 +1,8 @@
 <div class="container">
-  <h1>Users#show</h1>
-  <p>Find me in app/views/users/show.html.erb</p>
+  <p>Hi <%=@user.username%>!</p>
+  <div class="row dashboard">
+    <div class="col-8">
+      <img src="<%=@user.url%>" style="border-radius: 50%;height: 300px;">
+    </div>
+    <div class="col-4"></div>
 </div>
