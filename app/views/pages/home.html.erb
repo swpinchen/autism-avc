@@ -5,30 +5,30 @@
         <div class="container d-flex justify-content-around info-api" style="padding: 16px;">
           <div class="weather">
             <!--Weather API here-->
-            <%= image_tag 'cloudy.png', height: 120, width: 120 %>
+            <%= image_tag 'cloudy.png', height: 150, width: 150 %>
           </div>
           <div class="day-of-week">
             <!--Calendar API here-->
             <p class="date-day">March <%= DateTime.now.day %></p>
           </div>
         </div>
-        <div class="item-summary">
-          <% @items[0..3].each do |item| %>
-            <%= render 'shared/dashboardcard', review: @review, item: item %>
-          <% end %>
+        <%= link_to items_path do %>
+          <div class="summary-cal">
+            <p class = "title">WEEK</p>
+            <i class="fas fa-calendar-alt dashboard-btn"></i>
+          </div>
+        <%end%>
+        <div class="summary-cal mt-3">
+          <p class = "title">DAY</p>
+          <i class="far fa-calendar dashboard-btn" my-18></i>
         </div>
       </div>
     </div>
     <div class="col-4">
-      <%= link_to items_path do %>
-        <div class="summary-cal">
-          <p class = "title">WEEK</p>
-          <i class="fas fa-calendar-alt dashboard-btn"></i>
-        </div>
-      <%end%>
-      <div class="summary-cal mt-3">
-        <p class = "title">DAY</p>
-        <i class="far fa-calendar dashboard-btn" my-18></i>
+      <div class="item-summary">
+        <% @items[0..3].each do |item| %>
+          <%= render 'shared/dashboardcard', review: @review, item: item %>
+        <% end %>
       </div>
     </div>
   </div>

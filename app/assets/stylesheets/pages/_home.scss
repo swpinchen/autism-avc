@@ -25,15 +25,15 @@ color:#035AC1
 
 .item-summary{
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   grid-gap: 8px;
 }
 
 
 .day-of-week{
   background-image: asset-url('calendar.png');
-  width: 120px;
-  height: 120px;
+  width: 150px;
+  height: 150px;
   background-size: cover;
   position: relative;
   p{
@@ -45,7 +45,7 @@ color:#035AC1
     transform: translate(-50%, -50%);
     color: black;
     font-family: 'Roboto', sans-serif;
-    font-size: 24px;
+    font-size: 30px;
   }
 }
 
