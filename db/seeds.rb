@@ -65,3 +65,6 @@ user_email_list.length.times do |index|
     puts "Task for #{user.name} created"
   end
 end
+
+# Test to make Herny a parent
+User.first.parent = User.last
