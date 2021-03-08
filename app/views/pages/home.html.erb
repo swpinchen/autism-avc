@@ -25,7 +25,8 @@
       </div>
     </div>
     <div class="col-4">
-      <div class="item-summary">
+      <div class="daycontainer">
+        <p>FAVOURITES</p>
         <% @items[0..3].each do |item| %>
           <%= render 'shared/dashboardcard', review: @review, item: item %>
         <% end %>
