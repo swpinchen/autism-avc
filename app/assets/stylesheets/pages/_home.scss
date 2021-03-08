@@ -4,21 +4,21 @@
 .summary{
   background-color: #F4F4F4;
   border-radius: 16px;
-  height: 85vh;
+  // height: 95vh;
   text-align: center;
   padding: 16px;
 }
 .title {
 padding-top: 30px;
-font-size: 26px;
+font-size: 35px;
 font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 font-weight: 500;
-color: #1F87E8
+color: #3C89C1
 }
 .summary-cal{
   background-color: #F4F4F4;
   border-radius: 16px;
-  height: 41vh;
+  // height: 46vh;
   text-align: center;
   padding: 16px;
 }
@@ -32,8 +32,8 @@ color: #1F87E8
 
 .day-of-week{
   background-image: asset-url('calendar.png');
-  width: 175px;
-  height: 175px;
+  width: 120px;
+  height: 120px;
   background-size: cover;
   position: relative;
   p{
@@ -45,13 +45,13 @@ color: #1F87E8
     transform: translate(-50%, -50%);
     color: black;
     font-family: 'Roboto', sans-serif;
-    font-size: 30px;
+    font-size: 24px;
   }
 }
 
 .dashboard-btn{
   padding: 30px;
-  font-size: 80px;
+  font-size: 110px;
   text-decoration: none;
   margin: 0px;
   color: black;
