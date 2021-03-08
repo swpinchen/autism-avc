@@ -41,9 +41,10 @@ User.destroy_all
 puts 'All users deleted.'
 
 
-puts 'Creating users...'
+puts 'Creating users ...(parents)'
 user_email_list = ['s_pinchen@hotmail.com', 'ivanwilf@hotmail.com', 'natasha030320@gmail.com', 'hhknight@me.com']
 user_list = []
+
 
 user_email_list.length.times do |index|
   user = User.create!(email: user_email_list[index], password: "password", name: Faker::Name.name, birthday: Date.new(rand(2011..2015), rand(1..12), rand(1..28)), username: user_email_list[index].match(/(\S+)(@)(\S+)/)[1])
@@ -58,3 +59,7 @@ user_email_list.length.times do |index|
     puts "Task for #{user.name} created"
   end
 end
+first_user = user_list.first
+first_user.parent = user_list.last
+first_user.save
+
