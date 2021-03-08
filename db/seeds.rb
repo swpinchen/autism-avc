@@ -15,6 +15,13 @@ image_array = [
   'https://images.unsplash.com/photo-1528712306091-ed0763094c98?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1280&q=80'
 ]
 
+profile_pic = [
+  "https://avatars.githubusercontent.com/u/33692745?s=400&u=84c4e3aea3d49f4eabf46376a19718d462834914&v=4",
+  "https://avatars.githubusercontent.com/u/74359151?s=460&u=057bebafa3739a16372a24bb76925be189a97186&v=4",
+  "https://avatars.githubusercontent.com/u/67854900?s=400&u=70c9e42d5250ddf918522d068dcd0485816d194e&v=4",
+  "https://avatars.githubusercontent.com/u/18280640?s=400&u=4f2ccaabf2e6d5d8e8c029cd23b5098291851f1d&v=4"
+]
+
 title_array = [
   'School',
   'Park',
@@ -47,7 +54,7 @@ user_list = []
 
 
 user_email_list.length.times do |index|
-  user = User.create!(email: user_email_list[index], password: "password", name: Faker::Name.name, birthday: Date.new(rand(2011..2015), rand(1..12), rand(1..28)), username: user_email_list[index].match(/(\S+)(@)(\S+)/)[1])
+  user = User.create!(email: user_email_list[index], password: "password", name: Faker::Name.name, birthday: Date.new(rand(2011..2015), rand(1..12), rand(1..28)), username: user_email_list[index].match(/(\S+)(@)(\S+)/)[1], url: profile_pic[index])
   user_list << user
   puts "User #{user.id}: #{user.email} was created!"
   image_array.each_with_index do |image, index|
