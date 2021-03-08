@@ -14,6 +14,8 @@ class ReviewsController < ApplicationController
     @review = Review.create(review_params)
     @item = Item.find(params[:item_id])
     @review.item = @item
+    @item.last_opened = DateTime.now
+    @item.save!
     # @review.user = current_user
     authorize @review
     if @review.save

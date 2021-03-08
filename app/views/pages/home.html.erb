@@ -28,7 +28,8 @@
     </div>
     <div class="col-4">
       <div class="daycontainer">
-        <% @items[0..3].each do |item| %>
+        <% recents = @items.sort_by {|item| item.updated_at}.reverse %>
+        <% recents[0..3].each do |item| %>
           <%= render 'shared/dashboardcard', review: @review, item: item %>
         <% end %>
       </div>
