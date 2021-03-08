@@ -22,6 +22,8 @@ require("channels")
 
 // External imports
 import "bootstrap";
+import { showWeather } from "../plugins/weather";
+
 
 // Internal imports, e.g:
 // import { webspeech } from '../plugins/webspeech';
@@ -29,7 +31,8 @@ import "bootstrap";
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g: initSelect2();
-
+//weather API
+  showWeather();
 // WEB SPEECH API
 
 // Init SpeechSynth API
