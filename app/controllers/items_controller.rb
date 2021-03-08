@@ -24,7 +24,7 @@ class ItemsController < ApplicationController
   def create
     @item = Item.create(item_params)
     @item.user = current_user
-    # authorize @item
+    authorize @item
     if @item.save
       @item.last_opened = DateTime.now
       @item.save
