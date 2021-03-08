@@ -1,0 +1,7 @@
+<h2>New Task</h2>
+<%= simple_form_for item do |f| %>
+  <%= f.input :title %>
+  <%= f.input :start_date%>
+  <%= f.input :end_date%>
+  <%= f.submit "Create task", class: "btn btn-primary" %>
+<%end%>
