@@ -14,7 +14,8 @@
             <tr>
             <th scope="col">Item</th>
             <th scope="col">Description</th>
-            <th scope="col">Date</th>
+            <th scope="col">Start date</th>
+            <th scope="col">End date</th>
             <th scope="col">Reaction</th>
             </tr>
           </thead>
@@ -24,7 +25,20 @@
               <th scope="row"><%=item.title%></th>
               <td><%=item.details%></td>
               <td><%=item.start_date%></td>
-              <td>@mdo</td>
+              <td><%=item.end_date%></td>
+              <%if item.reviews[0].nil?%>
+                <td>-</td>
+              <%else%>
+                <% if item.reviews.last.rating == 1 %>
+                  <td><i class="fa fa-sad-cry table-icon"></i></td>
+                  <% elsif item.reviews.last.rating == 2 %>
+                  <td><i class="fa fa-frown-open table-icon"></i></td>
+                  <% elsif item.reviews.last.rating == 3 %>
+                  <td><i class="fa fa-laugh-squint table-icon"></i></td>
+                  <% elsif item.reviews.last.rating == 4 %>
+                  <td><i class="fa fa-grin-hearts table-icon"></i></td>
+                  <% end %>
+              <%end%>
             </tr>
           <%end%>
           </tbody>
