@@ -3,7 +3,7 @@ class ItemsController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
 
   def index
-    @items = policy_scope(Item)
+    @items = policy_scope(Item).order(:start_date)
     @review = Review.new
     unless params[:item] == nil
       @selected = Item.find(params[:item])
@@ -12,6 +12,8 @@ class ItemsController < ApplicationController
 
   def show
     @review = Review.new
+    @item.last_opened = DateTime.now
+    @item.save
   end
 
   def new
@@ -24,6 +26,8 @@ class ItemsController < ApplicationController
     @item.user = current_user
     authorize @item
     if @item.save
+      @item.last_opened = DateTime.now
+      @item.save
       redirect_to users_show_path
     else
       render :new
