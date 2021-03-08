@@ -66,4 +66,5 @@ user_email_list.length.times do |index|
   end
 end
 
+# Test to make Herny a parent
 User.first.parent = User.last
