@@ -7,8 +7,10 @@
       <i class="fas fa-home"></i>
     <% end %>
     <div class="d-flex">
-      <%= link_to users_show_path, class: "home-btn" do %>
-        <i class="fas fa-user mr-3"></i>
+      <%if current_user%>
+        <%= link_to users_show_path, class: "home-btn" do %>
+          <i class="fas fa-user mr-3"></i>
+        <%end%>
       <%end%>
       <i class="fas fa-microphone-alt"></i>
     </div>
