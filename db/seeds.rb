@@ -54,7 +54,7 @@ user_list = []
 
 
 user_email_list.length.times do |index|
-  user = User.create!(email: user_email_list[index], password: "password", name: Faker::Name.name, birthday: Date.new(rand(2011..2015), rand(1..12), rand(1..28)), username: user_email_list[index].match(/(\S+)(@)(\S+)/)[1])
+  user = User.create!(email: user_email_list[index], password: "password", name: Faker::Name.name, birthday: Date.new(rand(2011..2015), rand(1..12), rand(1..28)), username: user_email_list[index].match(/(\S+)(@)(\S+)/)[1], url: profile_pic[index])
   user_list << user
   puts "User #{user.id}: #{user.email} was created!"
   image_array.each_with_index do |image, index|
