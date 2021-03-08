@@ -24,11 +24,11 @@ class ItemsController < ApplicationController
   def create
     @item = Item.create(item_params)
     @item.user = current_user
-    # authorize @item
+    authorize @item
     if @item.save
       @item.last_opened = DateTime.now
       @item.save
-      redirect_to item_path
+      redirect_to users_show_path
     else
       render :new
     end
