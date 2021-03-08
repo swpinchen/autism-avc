@@ -5,22 +5,24 @@
         <div class="container d-flex justify-content-around info-api" style="padding: 16px;">
           <div class="weather">
             <!--Weather API here-->
-            <%= image_tag 'cloudy.png', height: 150, width: 150 %>
+            <%= image_tag 'cloudy.png', height: 200, width: 200 %>
           </div>
           <div class="day-of-week">
             <!--Calendar API here-->
             <p class="date-day">March <%= DateTime.now.day %></p>
           </div>
         </div>
-        <%= link_to items_path do %>
+        <div class="container d-flex justify-content-around">
+          <%= link_to items_path do %>
+            <div class="summary-cal">
+              <p class = "title">WEEK</p>
+              <i class="fas fa-calendar-alt dashboard-btn"></i>
+            </div>
+          <%end%>
           <div class="summary-cal">
-            <p class = "title">WEEK</p>
-            <i class="fas fa-calendar-alt dashboard-btn"></i>
+            <p class = "title">DAY</p>
+            <i class="far fa-calendar dashboard-btn" my-18></i>
           </div>
-        <%end%>
-        <div class="summary-cal mt-3">
-          <p class = "title">DAY</p>
-          <i class="far fa-calendar dashboard-btn" my-18></i>
         </div>
       </div>
     </div>
