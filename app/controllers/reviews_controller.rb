@@ -19,12 +19,9 @@ class ReviewsController < ApplicationController
     # @review.user = current_user
     authorize @review
     if @review.save
-      if @review.rating == 1
-        # @happy = Item.where(reviews.rating)
-        redirect_to item_path(@item)
-      else
-        redirect_to item_path(@item)
-      end
+      # @happy = Item.where(reviews.rating)
+      @read_sad = true if @review.rating == 1
+      redirect_to item_path(@item, read: @read_sad)
     else
       render :new
     end
