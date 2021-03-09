@@ -46,6 +46,14 @@ class ItemsController < ApplicationController
     end
   end
 
+  def destroy
+    @item = Item.find(params[:id])
+    authorize @item
+    @item.reviews.destroy_all if @item.reviews.any?
+    @item.destroy
+    redirect_to users_show_path
+  end
+
   private
 
   def item_params
