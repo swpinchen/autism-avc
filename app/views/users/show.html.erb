@@ -4,7 +4,7 @@
       <img class="mb-3"src="<%=@user.url%>" style="border-radius: 50%;height: 250px;">
       <p><b>Username:</b> <%=@user.username%></p>
       <p><b>Email:</b> <%=@user.email%></p>
-      <p><b>Member since:</b> <%=@user.created_at%></p>
+      <p><b>Member since:</b> <%=@user.created_at.strftime("%d-%m-%Y")%></p>
       <button type="button" class="btn btn-outline-danger">Log out</button>
     </div>
     <div class="col-9 info mt-3">
