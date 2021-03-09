@@ -51,7 +51,7 @@ const body = document.querySelector('main');
 const items = document.querySelectorAll("img");
 const details = document.querySelector(".details");
 const sad = document.querySelector("#readsad")
-const comfort = "I'm sorry. But you get to"
+const comfort = "Thank you for telling me how you feel. Just remember you get to do the following task"
 
 //Browser identifier
 // Firefox 1.0+
