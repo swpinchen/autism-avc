@@ -50,7 +50,7 @@ const pitchValue = document.querySelector('#pitch-value');
 const body = document.querySelector('main');
 const items = document.querySelectorAll("img");
 const details = document.querySelector(".details");
-const sad = document.querySelector(".sad")
+const sad = document.querySelector("#readsad")
 const comfort = "I'm sorry. But you get to"
 
 //Browser identifier
@@ -101,7 +101,7 @@ const speak = () => {
     // Get speak text
     speakText = new SpeechSynthesisUtterance(textInput.value);
     speakText.lang = "en-US";
-    // speakText.voice = "Alex";
+    // speakText.voice = "Daniel";
 
     // Speak end
     speakText.onend = e => {
@@ -144,9 +144,9 @@ const readDetails = () => {
     synth.speak(speakText)
 };
 
-const speakComfort = () => {
+const readText = (text) => {
   console.log('speaking comfort')
-  speakText = new SpeechSynthesisUtterance(comfort);
+  speakText = new SpeechSynthesisUtterance(text);
   speakText.rate = 1;
   speakText.pitch = 1;
   speakText.lang = "en-US";
@@ -176,15 +176,11 @@ items.forEach( item => {
 });
 
 
-  sad.addEventListener("click", function( event ) {
+  if (sad) {
     console.log(sad.dataset.happyTitle);
-    speakText = new SpeechSynthesisUtterance(sad.dataset.happyTitle);
-    speakText.rate = 1;
-    speakText.pitch = 1;
-    speakText.lang = "en-US";
-    speakComfort();
-    synth.speak(speakText);
-  }, false);
+    const text = comfort + sad.dataset.happyTitle;
+    readText(text);
+  };
 
 
 

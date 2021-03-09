@@ -22,7 +22,7 @@
             <%= f.input :rating, as: :hidden, wrapper_html:{ class: "m-0" }, input_html:{ value: 1} %>
             <%# <button class="fa fa-sad-cry"></button> %>
             <% if @happy != nil %>
-              <%= f.button :button, class: "py-0 sad", data: {:happy_title => @happy.title, :happy_details => @happy.details} do %>
+              <%= f.button :button, class: "py-0 sad" do %>
                 <i class="fa fa-sad-cry"></i>
               <% end %>
             <% else %>
@@ -50,6 +50,11 @@
             <% end %>
           <% end %>
           <% @happy if @happy != nil %>
+        <% end %>
+        <% if params[:read].present? %>
+          <div id='readsad' data-happy-title="<%= @happy.title %>" data-happy-details="<%=  @happy.details %>">
+            
+          </div>
         <% end %>
        </span>
      </div>
