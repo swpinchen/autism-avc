@@ -1,7 +1,7 @@
 .card-trip {
   overflow: hidden;
   background: white;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
   border-radius: 16px;
   display: flex;
   flex-direction: column;
@@ -9,9 +9,9 @@
 
 .card-trip-selected {
   overflow: hidden;
-  background: #ecf9ff;
+  background: #fff5f5;
   // box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
-  box-shadow: 0 0 15px rgba(200, 0, 0, 0.8);
+  box-shadow: 0 0 15px rgba(200, 50, 50, 0.5);
   border-radius: 16px;
   display: flex;
   flex-direction: column;
