@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row dashboard">
     <div class="col-3 profile mt-3"style="background-color: #f9f8f8; border-radius: 41px;">
-      <img class="mb-3"src="<%=@user.url%>" style="border-radius: 50%;height: 250px;">
+      <img class="my-3"src="<%=@user.url%>" style="border-radius: 50%;height: 250px;">
       <p><b>Username:</b> <%=@user.username%></p>
       <p><b>Email:</b> <%=@user.email%></p>
       <p><b>Member since:</b> <%=@user.created_at.strftime("%d-%m-%Y")%></p>
@@ -38,6 +38,7 @@
             <th scope="col">Start date</th>
             <th scope="col">End date</th>
             <th scope="col">Reaction</th>
+            <th scope="col">options</th>
             </tr>
           </thead>
           <tbody>
@@ -60,6 +61,7 @@
                   <td><i class="fa fa-grin-hearts table-icon"></i></td>
                   <% end %>
               <%end%>
+              <td><%= link_to '', item_path(item), method: :delete, data: { confirm: "Are you sure?" }, class:"btn btn-danger fas fa-trash-alt"%></td>
             </tr>
           <%end%>
           </tbody>
