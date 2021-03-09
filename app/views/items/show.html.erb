@@ -21,8 +21,14 @@
             <%# <%= f.input :date, as: :hidden, input_html:{ value: item.start_date } %>
             <%= f.input :rating, as: :hidden, wrapper_html:{ class: "m-0" }, input_html:{ value: 1} %>
             <%# <button class="fa fa-sad-cry"></button> %>
-            <%= f.button :button, class: "py-0 sad", data: {:happy_title => @happy.title, :happy_details => @happy.details} do %>
+            <% if @happy != nil %>
+              <%= f.button :button, class: "py-0 sad", data: {:happy_title => @happy.title, :happy_details => @happy.details} do %>
+                <i class="fa fa-sad-cry"></i>
+              <% end %>
+            <% else %>
+              <%= f.button :button, class: "py-0 sad" do %>
               <i class="fa fa-sad-cry"></i>
+              <% end %>
             <% end %>
           <% end %>
           <%= simple_form_for [@item, @review] do |f|%>
