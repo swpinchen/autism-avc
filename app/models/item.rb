@@ -8,5 +8,9 @@ class Item < ApplicationRecord
   validates :end_date, presence: true
   validates :recurring, default: false
   validates :completed, default: false
-end
 
+  include PgSearch::Model
+  pg_search_scope :search_by_title, against: [:title], using: {
+    tsearch: { prefix: true } # <-- now `superman batm` will return something!
+  }
+end

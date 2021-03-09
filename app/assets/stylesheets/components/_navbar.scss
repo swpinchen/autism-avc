@@ -17,6 +17,10 @@
   padding: 0px 16px;
 }
 
+.placeholder {
+  width: 100px;
+}
+
 .home-btn{
   text-decoration: none;
   margin: 0px;
@@ -25,4 +29,10 @@
   &:hover{
     color: white;
   }
+}
+
+.search {
+  padding: 8px;
+  margin-right: 24px;
+  font-size: 16px;
 }
