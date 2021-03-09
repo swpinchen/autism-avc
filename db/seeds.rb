@@ -57,12 +57,18 @@ user_email_list.length.times do |index|
   user_list << user
   puts "User #{user.id}: #{user.email} was created!"
   image_array.each_with_index do |image, index|
-    item = Item.new(title: title_array[index], start_date: DateTime.new(2021, 3, rand(8..14), rand(1..23),rand(0..59)), end_date: DateTime.new(2021, 3, rand(8..14)), category: "task,", details: detail_array[index])
+    if image == image_array[0]
+      # if its school only create the item in weekdays
+      item = Item.new(title: title_array[index], start_date: DateTime.new(2021, 3, rand(8..12), rand(1..23),rand(0..59)), end_date: DateTime.new(2021, 3, rand(8..14)), category: "task,", details: detail_array[index])
+    else
+      item = Item.new(title: title_array[index], start_date: DateTime.new(2021, 3, rand(8..14), rand(1..23),rand(0..59)), end_date: DateTime.new(2021, 3, rand(8..14)), category: "task,", details: detail_array[index])
+    end
     item.user = user
     file = URI.open(image)
     item.photo.attach(io: file, filename: 'first.png', content_type: 'image/png')
     item.save!
     puts "Task for #{user.name} created"
+
   end
 end
 
