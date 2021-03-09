@@ -182,7 +182,7 @@ items.forEach( item => {
     speakText.rate = 1;
     speakText.pitch = 1;
     speakText.lang = "en-US";
-    speakComfort()
+    speakComfort();
     synth.speak(speakText);
   }, false);
 
