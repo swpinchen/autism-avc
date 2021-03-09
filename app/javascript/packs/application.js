@@ -50,6 +50,8 @@ const pitchValue = document.querySelector('#pitch-value');
 const body = document.querySelector('main');
 const items = document.querySelectorAll("img");
 const details = document.querySelector(".details");
+const sad = document.querySelector(".sad")
+const comfort = "I'm sorry. But you get to"
 
 //Browser identifier
 // Firefox 1.0+
@@ -142,6 +144,15 @@ const readDetails = () => {
     synth.speak(speakText)
 };
 
+const speakComfort = () => {
+  console.log('speaking comfort')
+  speakText = new SpeechSynthesisUtterance(comfort);
+  speakText.rate = 1;
+  speakText.pitch = 1;
+  speakText.lang = "en-US";
+  synth.speak(speakText)
+}
+
 days.forEach( day => {
   day.addEventListener("click", function( event ) {
     speakText = new SpeechSynthesisUtterance(day.innerHTML);
@@ -164,6 +175,16 @@ items.forEach( item => {
   }, false);
 });
 
+
+  sad.addEventListener("click", function( event ) {
+    console.log(sad.dataset.happyTitle);
+    speakText = new SpeechSynthesisUtterance(sad.dataset.happyTitle);
+    speakText.rate = 1;
+    speakText.pitch = 1;
+    speakText.lang = "en-US";
+    speakComfort()
+    synth.speak(speakText);
+  }, false);
 
 
 

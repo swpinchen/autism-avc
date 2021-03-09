@@ -26,6 +26,7 @@ class ItemsController < ApplicationController
     @review = Review.new
     @item.last_opened = DateTime.now
     @item.save
+    @happy = Item.joins(:reviews).order(rating: :desc).limit(1).first
   end
 
   def new

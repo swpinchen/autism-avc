@@ -21,11 +21,9 @@ class ReviewsController < ApplicationController
     if @review.save
       if @review.rating == 1
         # @happy = Item.where(reviews.rating)
-        @reviewed_items = Item.all.select{|item| item.reviews.any?}
-        @happy = @reviewed_items.sort_by{ |item| item.reviews.last.rating }.last
-        redirect_to item_path(@happy)
+        redirect_to item_path(@item)
       else
-        redirect_to items_path
+        redirect_to item_path(@item)
       end
     else
       render :new
