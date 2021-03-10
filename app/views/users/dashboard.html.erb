@@ -12,16 +12,24 @@
             <p class="date-day">March <%= DateTime.now.day %></p>
           </div>
         </div>
-        <div class="container d-flex justify-content-around button-container">
-          <%= link_to items_path do %>
-            <div class="summary-cal">
-              <p class = "title">WEEK</p>
-              <i class="fas fa-calendar-alt dashboard-btn"></i>
+        <div class="link-container d-flex justify-content-between button-container">
+          <div class="links">
+            <div class="position-relative">
+              <div class="summary-cal">
+                <p class = "title">WEEK</p>
+                <i class="fas fa-calendar-alt dashboard-btn"></i>
+              </div>
+              <%= link_to '', items_path, class: "itemlink" %>
             </div>
-          <%end%>
-          <div class="summary-cal">
-            <p class = "title">DAY</p>
-            <i class="far fa-calendar dashboard-btn" my-16></i>
+          </div> 
+          <div class="links">
+            <div class="position-relative">
+              <div class="summary-cal">
+                <p class = "title">DAY</p>
+                <i class="far fa-calendar dashboard-btn"></i>
+              </div>
+              <%= link_to '', items_path, class: "itemlink" %>
+            </div>
           </div>
         </div>
       </div>
