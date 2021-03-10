@@ -23,6 +23,7 @@ require("channels")
 // External imports
 import "bootstrap";
 import { showWeather } from "../plugins/weather";
+import { SynthVoice } from "../plugins/voice";
 
 
 // Internal imports, e.g:
@@ -37,6 +38,7 @@ document.addEventListener('turbolinks:load', () => {
 
 // Init SpeechSynth API
 const synth = window.speechSynthesis;
+const voice = new SynthVoice({voiceURI: "Google UK English Female"});
 
 // DOM Elements
 const days = document.querySelectorAll("th");
@@ -63,22 +65,6 @@ var isChrome = !!window.chrome && !!window.chrome.webstore;
 let voices = [];
 let speakText = "";
 
-// Populate dropdown in Settings Page
-const getVoices = () => {
-  voices = synth.getVoices();
-  // Loop through voices and create an option for each one
-  voices.forEach(voice => {
-    // Create option element
-    const option = document.createElement('option');
-    // Fill option with voice and language
-    option.textContent = voice.name + '(' + voice.lang + ')';
-    // Set needed option attributes
-    option.setAttribute('data-lang', voice.lang);
-    option.setAttribute('data-name', voice.name);
-    voiceSelect.appendChild(option);
-  });
-};
-
 //Fix for duplication, run code depending on the browser
 if (isFirefox) {
     getVoices();
@@ -89,77 +75,20 @@ if (isChrome) {
     }
 }
 
-// For Settings Console
-const speak = () => {
-  // Check if speaking
-  if (synth.speaking) {
-    console.error('Already speaking...');
-    return;
-  }
-  if (textInput.value !== '') {
-
-    // Get speak text
-    speakText = new SpeechSynthesisUtterance(textInput.value);
-    speakText.lang = "en-UK";
-    // speakText.voice = "Daniel";
-
-    // Speak end
-    speakText.onend = e => {
-      console.log('Done speaking!');
-    };
-
-    // Speak error
-    speakText.onerror = e => {
-      console.error(e);
-    };
-
-    // Select voice (unable to implement dropdown on settings page)
-    // const selectedVoice = voiceSelect.selectedOptions[0].getAttribute(
-    //   'data-name'
-    // );
-
-    // Loop through voices
-    voices.forEach(voice => {
-      if (voice.name === selectedVoice) {
-        speakText.voice = voice;
-      }
-    });
-
-    // Set pitch and rate
-    speakText.rate = rate.value;
-    speakText.pitch = pitch.value;
-    // Speak
-    synth.speak(speakText);
-  }
-};
 
 // EVENT LISTENERS
 
 const readDetails = () => {
-  console.log(details.innerText)
-    speakText = new SpeechSynthesisUtterance(details.innerText);
-    speakText.rate = 1;
-    speakText.pitch = 1;
-    speakText.lang = "en-UK";
-    synth.speak(speakText);
+  voice.say(details.innerText);
 };
 
 const readText = (text) => {
-  console.log('speaking comfort')
-  speakText = new SpeechSynthesisUtterance(text);
-  speakText.rate = 1;
-  speakText.pitch = 1;
-  speakText.lang = "en-UK";
-  synth.speak(speakText)
+  voice.say(text)
 }
 
 days.forEach( day => {
   day.addEventListener("click", function( event ) {
-    speakText = new SpeechSynthesisUtterance(day.innerHTML);
-    speakText.rate = 1;
-    speakText.pitch = 1;
-    speakText.lang = "en-UK";
-    synth.speak(speakText)
+    voice.say(day.innerHTML)
   }, false);
 });
 
@@ -167,7 +96,7 @@ items.forEach( item => {
   item.addEventListener("click", function( event ) {
     const intro = 'You have to'
     const text = intro + details.innerText
-    readText(text);
+    voice.say(text);
   }, false);
 });
 
@@ -176,31 +105,5 @@ items.forEach( item => {
     console.log(sad.dataset.happyTitle);
     const text = comfort + sad.dataset.happyDetails;
     readText(text);
-  };
-
-
-
-// Voice settings form submit
-// if (textForm !== null) {
-//   textForm.addEventListener('submit', e => {
-//   e.preventDefault();
-//   speak();
-//   textInput.blur();
-//   });
-// }
-
-// Rate value change
-if (rate !== null) {
-  rate.addEventListener('change', e => (rateValue.textContent = rate.value));
-}
-
-// Pitch value change
-if (pitchValue !== null) {
-  pitch.addEventListener('change', e => (pitchValue.textContent = pitch.value));
-}
-
-// Voice select change
-if (voiceSelect !== null) {
-  voiceSelect.addEventListener('change', e => speak());
-}
-});
+  }
+})
