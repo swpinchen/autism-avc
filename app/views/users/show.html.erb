@@ -1,11 +1,11 @@
-<div class="container">
+<div class="container user-show">
   <div class="row dashboard">
     <div class="col-3 profile mt-3"style="background-color: #f9f8f8; border-radius: 41px;">
-      <img class="my-3"src="<%=@user.url%>" style="border-radius: 50%;height: 250px;">
-      <p><b>Username:</b> <%=@user.username%></p>
-      <p><b>Email:</b> <%=@user.email%></p>
-      <p><b>Member since:</b> <%=@user.created_at.strftime("%d-%m-%Y")%></p>
-      <button type="button" class="btn btn-outline-danger">Log out</button>
+      <img class="my-3"src="<%=@user.url%>" style="border-radius: 50%;width: 100%; height: auto; padding: 16px;">
+      <p><b>Username:</b><br> <%=@user.username%></p>
+      <p><b>Email:</b><br> <%=@user.email%></p>
+      <p><b>Member since:</b><br> <%=@user.created_at.strftime("%d-%m-%Y")%></p>
+      <button type="button" class="btn btn-outline-danger mb-3">Log out</button>
     </div>
     <div class="col-9 info mt-3">
       <button type="button" class="btn btn-primary mb-3" data-toggle="modal" data-target="#exampleModalLong">
@@ -16,7 +16,7 @@
       <div class="modal-dialog" role="document">
           <div class="modal-content">
           <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+              <h5 class="modal-title" id="exampleModalLongTitle">New task</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
               </button>
@@ -30,15 +30,15 @@
           </div>
       </div>
       </div>
-        <table class="table table-hover">
-          <thead>
+        <table id ="profile-table"class="table table-hover">
+          <thead id="parent-table">
             <tr>
             <th scope="col">Item</th>
             <th scope="col">Description</th>
             <th scope="col">Start date</th>
             <th scope="col">End date</th>
             <th scope="col">Reaction</th>
-            <th scope="col">Options</th>
+            <th scope="col">Delete</th>
             </tr>
           </thead>
           <tbody>
@@ -46,8 +46,8 @@
             <tr>
               <th scope="row"><%=item.title%></th>
               <td><%=item.details%></td>
-              <td><%=item.start_date%></td>
-              <td><%=item.end_date%></td>
+              <td><%=item.start_date.strftime("%A  %l%p")%></td>
+              <td><%=item.end_date.strftime("%A  %l%p")%></td>
               <%if item.reviews[0].nil?%>
                 <td>-</td>
               <%else%>
@@ -61,7 +61,7 @@
                   <td><i class="fa fa-grin-hearts table-icon"></i></td>
                   <% end %>
               <%end%>
-              <td><%= link_to '', item_path(item), method: :delete, data: { confirm: "Are you sure?" }, class:"btn btn-outline-danger fas fa-trash-alt"%></td>
+              <td><%= link_to '', item_path(item), method: :delete, data: { confirm: "Are you sure?" }, class:"fas fa-times"%></td>
             </tr>
           <%end%>
           </tbody>

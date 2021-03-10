@@ -15,7 +15,7 @@ class User < ApplicationRecord
   end
 
   def parent?
-    !parent.nil?
+    parent.nil?
   end
 
 end

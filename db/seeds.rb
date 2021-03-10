@@ -32,12 +32,12 @@ title_array = [
 ]
 
 detail_array = [
-  'Have a wonderful day at school, from mummy and daddy',
-  'Get ready to play with your friends',
-  'Shopping with mummy',
-  'Remember to put the plates in the drying rack',
-  'Time to kick the ball around',
-  'Lets cook pasta with daddy'
+  'Have a wonderful day at school',
+  'play with your friends at the park',
+  'go hopping with mummy',
+  'do the dishes. Remember to put the plates in the drying rack',
+  'play football. Get ready to kick the ball around',
+  'cook pasta with daddy'
 ]
 puts 'Cleaning up db...'
 Review.destroy_all
