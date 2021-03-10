@@ -3,34 +3,38 @@
     <%= link_to :back, class: "home-btn" do %>
       <i class="fas fa-arrow-left"></i>
     <% end %>
-
     <!-- Placeholder added to make home button central -->
     <div class="placeholder">
     </div>
-
-    <%= link_to root_path, class: "home-btn" do %>
-      <i class="fas fa-home"></i>
-    <% end %>
+    <%if current_user %>
+      <%= link_to dashboard_path, class: "home-btn" do %>
+        <i class="fas fa-home"></i>
+      <% end %>
     <div class="d-flex">
-      <%if current_user%>
-        <%= link_to users_show_path, class: "home-btn" do %>
-          <i class="fas fa-user mr-3"></i>
-        <%end%>
-      <%end%>
-
       <div class="search">
         <%= form_tag items_path, method: :get do %>
           <%= text_field_tag :query,
-            params[:query],
-            placeholder: "Find an item" %>
-          <%= submit_tag "Search", class: "btn btn-primary" %>
+          params[:query],
+          placeholder: "Find an item" %>
+          <%= submit_tag "Search", class: "btn-search" %>
         <% end %>
       </div>
-
+      <%if current_user.parent?%>
+        <%= link_to user_path(current_user), class: "home-btn" do %>
+          <i class="fas fa-user mr-3"></i>
+        <%end%>
+      <%end%>
       <div>
         <i class="fas fa-microphone-alt"></i>
       </div>
-
+      <% else %>
+        <li class="nav-item">
+          <%= link_to "Sign in", new_user_session_path, class: "nav-link btn btn-link ml-3", style: 'color: white;' %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Sign Up", new_user_registration_path, class: "nav-link btn btn-warning ml-3", style: 'color: white;' %>
+        </li>
+      <% end %>
     </div>
   </div>
 </div>

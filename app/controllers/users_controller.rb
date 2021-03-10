@@ -7,4 +7,9 @@ class UsersController < ApplicationController
     @items = Item.all.sort_by{ |item| item.start_date }
     authorize @user
   end
+  def dashboard
+    @items = Item.all
+    @review = Review.new
+    authorize current_user
+  end
 end
