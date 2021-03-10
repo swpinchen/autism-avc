@@ -38,7 +38,7 @@
             <th scope="col">Start date</th>
             <th scope="col">End date</th>
             <th scope="col">Reaction</th>
-            <th scope="col">Options</th>
+            <th scope="col">Delete</th>
             </tr>
           </thead>
           <tbody>
@@ -61,7 +61,7 @@
                   <td><i class="fa fa-grin-hearts table-icon"></i></td>
                   <% end %>
               <%end%>
-              <td><%= link_to '', item_path(item), method: :delete, data: { confirm: "Are you sure?" }, class:"btn btn-outline-danger fas fa-trash-alt"%></td>
+              <td><%= link_to '', item_path(item), method: :delete, data: { confirm: "Are you sure?" }, class:"fas fa-times"%></td>
             </tr>
           <%end%>
           </tbody>
