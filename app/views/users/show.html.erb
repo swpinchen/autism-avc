@@ -2,10 +2,12 @@
   <div class="row dashboard">
     <div class="col-3 profile mt-3"style="background-color: #d6dde4e0; border-radius: 41px;">
       <img class="my-3"src="<%=@user.url%>" style="border-radius: 50%;width: 100%; height: auto; padding: 16px;">
-      <p><b>Username:</b><br> <%=@user.username%></p>
-      <p><b>Email:</b><br> <%=@user.email%></p>
-      <p><b>Member since:</b><br> <%=@user.created_at.strftime("%d-%m-%Y")%></p>
-      <button type="button" class="btn btn-outline-danger mb-3">Log out</button>
+      <p><b>Username:</b></p>
+      <p><%=@user.username%></p>
+      <p><b>Email:</b></p>
+      <p><%=@user.email%></p>
+      <p><b>Member since:</b></p>
+      <p><%=@user.created_at.strftime("%d-%m-%Y")%></p>
     </div>
     <div class="col-9 info mt-3">
       <button type="button" class="btn btn-primary mb-3" data-toggle="modal" data-target="#exampleModalLong">
