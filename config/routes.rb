@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  # get 'users/show'
+  get 'users/show'
   get 'settings/change', to: "settings#change"
   devise_for :users
   root to: 'pages#landing'
