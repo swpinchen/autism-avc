@@ -1,8 +1,7 @@
 .three-cards {
   display: flex;
-  margin-top: 16px;
+  margin-top: 20px;
   width: 100%;
-  height: 300px;
   justify-content: space-evenly;
 }
 
@@ -14,8 +13,8 @@
   text-align: center;
 }
 
-.card-title {
-  background-color: $primary;
+.card-main-title {
+  background-color: #9492b2;
   text-align: center;
   border-radius: 30px 30px 0 0;
   padding: 16px;
@@ -27,5 +26,13 @@
   font-size: 18px;
   padding-top: 3ex;
 
-
+}
+.card-home img {
+  border-radius: 0 0 30px 30px;
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+.container-card {
+  padding-top: 60px;
 }
