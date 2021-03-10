@@ -46,8 +46,8 @@
             <tr>
               <th scope="row"><%=item.title%></th>
               <td><%=item.details%></td>
-              <td><%=item.start_date%></td>
-              <td><%=item.end_date%></td>
+              <td><%=item.start_date.strftime("%A %B %e - %l %p")%></td>
+              <td><%=item.end_date.strftime("%A %B %e - %l %p")%></td>
               <%if item.reviews[0].nil?%>
                 <td>-</td>
               <%else%>
