@@ -51,7 +51,7 @@ const body = document.querySelector('main');
 const items = document.querySelectorAll("img");
 const details = document.querySelector(".details");
 const sad = document.querySelector("#readsad")
-const comfort = "Thank you for telling me how you feel. Just remember you get to do the following task"
+const comfort = "Thank you for telling me how you feel. Just remember you get to"
 
 //Browser identifier
 // Firefox 1.0+
@@ -100,7 +100,7 @@ const speak = () => {
 
     // Get speak text
     speakText = new SpeechSynthesisUtterance(textInput.value);
-    speakText.lang = "en-US";
+    speakText.lang = "en-UK";
     // speakText.voice = "Daniel";
 
     // Speak end
@@ -140,8 +140,8 @@ const readDetails = () => {
     speakText = new SpeechSynthesisUtterance(details.innerText);
     speakText.rate = 1;
     speakText.pitch = 1;
-    speakText.lang = "en-US";
-    synth.speak(speakText)
+    speakText.lang = "en-UK";
+    synth.speak(speakText);
 };
 
 const readText = (text) => {
@@ -149,7 +149,7 @@ const readText = (text) => {
   speakText = new SpeechSynthesisUtterance(text);
   speakText.rate = 1;
   speakText.pitch = 1;
-  speakText.lang = "en-US";
+  speakText.lang = "en-UK";
   synth.speak(speakText)
 }
 
@@ -158,27 +158,23 @@ days.forEach( day => {
     speakText = new SpeechSynthesisUtterance(day.innerHTML);
     speakText.rate = 1;
     speakText.pitch = 1;
-    speakText.lang = "en-US";
+    speakText.lang = "en-UK";
     synth.speak(speakText)
   }, false);
 });
 
 items.forEach( item => {
   item.addEventListener("click", function( event ) {
-    console.log(details.innerText)
-    speakText = new SpeechSynthesisUtterance(item.title);
-    speakText.rate = 1;
-    speakText.pitch = 1;
-    speakText.lang = "en-US";
-    synth.speak(speakText)
-    readDetails();
+    const intro = 'You have to'
+    const text = intro + details.innerText
+    readText(text);
   }, false);
 });
 
 
   if (sad) {
     console.log(sad.dataset.happyTitle);
-    const text = comfort + sad.dataset.happyTitle;
+    const text = comfort + sad.dataset.happyDetails;
     readText(text);
   };
 
