@@ -1,10 +1,10 @@
-<div class="container">
+<div class="container user-show">
   <div class="row dashboard">
     <div class="col-3 profile mt-3"style="background-color: #f9f8f8; border-radius: 41px;">
       <img class="my-3"src="<%=@user.url%>" style="border-radius: 50%;width: 100%; height: auto; padding: 16px;">
-      <p><b>Username:</b> <%=@user.username%></p>
-      <p><b>Email:</b> <%=@user.email%></p>
-      <p><b>Member since:</b> <%=@user.created_at.strftime("%d-%m-%Y")%></p>
+      <p><b>Username:</b><br> <%=@user.username%></p>
+      <p><b>Email:</b><br> <%=@user.email%></p>
+      <p><b>Member since:</b><br> <%=@user.created_at.strftime("%d-%m-%Y")%></p>
       <button type="button" class="btn btn-outline-danger mb-3">Log out</button>
     </div>
     <div class="col-9 info mt-3">
