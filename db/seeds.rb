@@ -68,9 +68,9 @@ user_email_list.length.times do |index|
   image_array.each_with_index do |image, index|
     if image == image_array[0]
       # if its school only create the item in weekdays
-      item = Item.new(title: title_array[index], start_date: DateTime.new(2021, 3, rand(8..12), rand(1..23),rand(0..59)), end_date: DateTime.new(2021, 3, rand(8..14)), category: "task,", details: detail_array[index])
+      item = Item.new(title: title_array[index], start_date: DateTime.new(2021, 3, rand(11..19), rand(1..23),rand(0..59)), end_date: DateTime.new(2021, 3, rand(11..19)), category: "task,", details: detail_array[index])
     else
-      item = Item.new(title: title_array[index], start_date: DateTime.new(2021, 3, rand(8..14), rand(1..23),rand(0..59)), end_date: DateTime.new(2021, 3, rand(8..14)), category: "task,", details: detail_array[index])
+      item = Item.new(title: title_array[index], start_date: DateTime.new(2021, 3, rand(11..19), rand(1..23),rand(0..59)), end_date: DateTime.new(2021, 3, rand(11..29)), category: "task,", details: detail_array[index])
     end
     item.user = user
     file = URI.open(image)
