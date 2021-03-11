@@ -12,7 +12,7 @@
         </div>
       </div>
       <button type="button" class="btn btn-primary btn-block my-3" data-toggle="modal" data-target="#exampleModalLong">
-        New Task
+        New Activity
       </button>
     </div>
     <div class="col-9 info mt-3">
@@ -39,7 +39,13 @@
       <div class="card-grid">
         <%i = 0%>
         <% while i <= 6 do%>
-          <p style="color: #0c0a3e;font-size: 20px;" ><b><%=(Time.now + i.days).strftime('%A')%></b></p>
+          <%if i == 0 %>
+            <p style="color: #0c0a3e;font-size: 20px;" ><b>Today</b></p>
+           <%elsif i == 1 %>
+            <p style="color: #0c0a3e;font-size: 20px;" ><b>Tomorrow</b></p> 
+          <%else%>
+            <p style="color: #0c0a3e;font-size: 20px;" ><b><%=(Time.now + i.days).strftime('%A')%></b></p>
+          <%end%>
           <%@items.each do |item|%>
             <%if item.start_date.strftime('%A') == (Time.now + i.days).strftime('%A') %>
               <div class="card-product">
