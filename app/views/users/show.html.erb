@@ -4,9 +4,11 @@
       <%unless @user.url.nil?%>
         <img id="perfil-pic"class="my-3"src="<%=@user.url%>">
       <%end%>
-      <p><i class="fas fa-user"></i> <%=@user.username%></p>
-      <p><i class="fas fa-envelope"></i> <%=@user.email%></p>
-      <p><i class="fas fa-calendar-check"></i> Member since: <%=@user.created_at.strftime("%d-%m-%Y")%></p>
+      <div class ="info">
+        <p><i class="fas fa-user"></i> <%=@user.username%></p>
+        <p><i class="fas fa-envelope"></i> <%=@user.email%></p>
+        <p><i class="fas fa-calendar-check"></i> Member since: <%=@user.created_at.strftime("%d-%m-%Y")%></p>
+      </div>
     </div>
     <div class="col-9 info mt-3">
       <button type="button" class="btn btn-primary mb-3" data-toggle="modal" data-target="#exampleModalLong">
