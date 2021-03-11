@@ -7,12 +7,15 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 image_array = [
-  'https://images.unsplash.com/photo-1588072432836-e10032774350?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mnx8c2Nob29sfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60',
-  'https://images.unsplash.com/photo-1575783970733-1aaedde1db74?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2255&q=80',
-  'https://loveincorporated.blob.core.windows.net/contentimages/main/de53d2eb-1b56-4c62-a6c9-c6bcac5e6ad5-coronavirus-mask-shopping-supermarket-shutter.jpg',
-  'https://images.unsplash.com/photo-1581622558667-3419a8dc5f83?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NHx8ZGlzaGVzfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60',
-  'https://images.unsplash.com/photo-1574629810360-7efbbe195018?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8c29jY2VyfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60',
-  'https://images.unsplash.com/photo-1528712306091-ed0763094c98?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1280&q=80'
+  'https://res.cloudinary.com/dbhwvijtx/image/upload/v1615429687/sunshine_aquarium_fksllm.jpg',
+  'https://res.cloudinary.com/dbhwvijtx/image/upload/v1615429686/cold_stone_icecream_afiuzg.jpg',
+  'https://res.cloudinary.com/dbhwvijtx/image/upload/v1615429686/toys_at_home_jgywxo.jpg',
+  'https://res.cloudinary.com/dbhwvijtx/image/upload/v1615429686/ueno_zoo_cgnxgd.jpg',
+  'https://res.cloudinary.com/dbhwvijtx/image/upload/v1615429687/picnic_at_park_oz7dye.jpg',
+  'https://res.cloudinary.com/dbhwvijtx/image/upload/v1615429687/us_kids_indoor_playhouse_muefco.jpg',
+  'https://res.cloudinary.com/dbhwvijtx/image/upload/v1615429687/walking_in_the_park_isuns6.jpg',
+  'https://res.cloudinary.com/dbhwvijtx/image/upload/v1615429686/outdoor_swimming_pool_wi0j2g.jpg',
+  'https://res.cloudinary.com/dbhwvijtx/image/upload/v1615429686/toys_r_us_toyshop_lu8cs9.jpg'
 ]
 
 profile_pic = [
@@ -23,21 +26,27 @@ profile_pic = [
 ]
 
 title_array = [
-  'School',
+  'Aquarium',
+  'Icecream',
+  'Toys',
+  'Zoo',
+  'Picnic',
+  'Indoor play park',
   'Park',
-  'Groceries',
-  'Dishes',
-  'Football',
-  'Cooking'
+  'Swimming pool',
+  'Toy shop'
 ]
 
 detail_array = [
-  'Have a wonderful day at school',
-  'play with your friends at the park',
-  'go hopping with mummy',
-  'do the dishes. Remember to put the plates in the drying rack',
-  'play football. Get ready to kick the ball around',
-  'cook pasta with daddy'
+  'visit the aquarium',
+  'get icecream with daddy',
+  'play with toys at home',
+  'visit the zoo with mummy',
+  'go to the park and have a picnic',
+  'play at the indoor play park',
+  'go for a stroll at the park',
+  'have a swim in the pool',
+  'visit the toy shop'
 ]
 puts 'Cleaning up db...'
 Review.destroy_all
