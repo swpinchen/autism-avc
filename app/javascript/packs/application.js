@@ -53,6 +53,8 @@ const body = document.querySelector('main');
 const items = document.querySelectorAll("img");
 const details = document.querySelector(".details");
 const sad = document.querySelector("#readsad")
+//Readable Dashboard
+const hola = document.getElementById('hola');
 const comfort = "Thank you for telling me how you feel. Just remember you get to"
 
 //Browser identifier
@@ -92,6 +94,13 @@ days.forEach( day => {
   }, false);
 });
 
+if (hola){
+  hola.addEventListener("click",function(event) {
+    const text = "Today is a cloudy day"
+    voice.say(text);
+  }, false);
+}
+
 items.forEach( item => {
   item.addEventListener("click", function( event ) {
     const intro = "Let's"
@@ -107,3 +116,5 @@ items.forEach( item => {
     readText(text);
   }
 })
+
+// readable weather
