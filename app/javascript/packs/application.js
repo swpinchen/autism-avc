@@ -55,6 +55,8 @@ const details = document.querySelector(".details");
 const sad = document.querySelector("#readsad")
 //Readable Dashboard
 const hola = document.getElementById('hola');
+const fecha = document.getElementById('fecha')
+const dateString = document.querySelector('.datestring')
 const comfort = "Thank you for telling me how you feel. Just remember you get to"
 
 //Browser identifier
@@ -96,7 +98,19 @@ days.forEach( day => {
 
 if (hola){
   hola.addEventListener("click",function(event) {
-    const text = "Today is a cloudy day"
+    fetch('https://api.openweathermap.org/data/2.5/weather?q=tokyo&appid=61aa4137c2a624fd51f9b0b5c814c3ac')
+      .then(response => response.json())
+      .then((data) => {
+        const text = `Today we are having ${data.weather[0].description}`;
+        voice.say(text);
+    })
+    
+  }, false);
+}
+
+if (fecha){
+  fecha.addEventListener("click",function(event) {
+    const text = `Today is ${dateString.innerText}`;
     voice.say(text);
   }, false);
 }
