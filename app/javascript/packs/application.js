@@ -103,7 +103,7 @@ items.forEach( item => {
 
   if (sad) {
     console.log(sad.dataset.happyTitle);
-    const text = comfort + sad.dataset.happyDetails;
+    const text = comfort + ' ' + sad.dataset.happyDetails;
     readText(text);
   }
 })
