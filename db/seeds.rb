@@ -7,12 +7,15 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 image_array = [
-  'https://images.unsplash.com/photo-1588072432836-e10032774350?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mnx8c2Nob29sfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60',
-  'https://images.unsplash.com/photo-1575783970733-1aaedde1db74?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2255&q=80',
-  'https://loveincorporated.blob.core.windows.net/contentimages/main/de53d2eb-1b56-4c62-a6c9-c6bcac5e6ad5-coronavirus-mask-shopping-supermarket-shutter.jpg',
-  'https://images.unsplash.com/photo-1581622558667-3419a8dc5f83?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NHx8ZGlzaGVzfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60',
-  'https://images.unsplash.com/photo-1574629810360-7efbbe195018?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8c29jY2VyfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60',
-  'https://images.unsplash.com/photo-1528712306091-ed0763094c98?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1280&q=80'
+  'https://www.icloud.com/iclouddrive/02tSO5rUkYhxTOTzFk4WKjCtA#sunshine_aquarium',
+  'https://www.icloud.com/iclouddrive/0VdAg144jvL8ayxCVAf3MN-GQ#cold_stone_icecream',
+  'https://www.icloud.com/iclouddrive/0nCMW6WZVB4evAzZNv2u9ftLA#toys_at_home',
+  'https://www.icloud.com/iclouddrive/0JOX4UQayxY6x-o2osZkRZzDg#ueno_zoo',
+  'https://www.icloud.com/iclouddrive/0tXkM7zUCGt3BOekteTnsUKXA#picnic_at_park',
+  'https://www.icloud.com/iclouddrive/0jqiughq9buwcTVFJhef4A8IA#us_kids_indoor_playhouse',
+  'https://www.icloud.com/iclouddrive/0i61fqMNPtUzfT33x0oZ1dDDA#walking_in_the_park',
+  'https://www.icloud.com/iclouddrive/0vXXWi7iAK88EwrmgkfuVVaqQ#outdoor_swimming_pool',
+  'https://www.icloud.com/iclouddrive/01Oq_TEbR0d6XVjNSoBOeRHpg#toys_r_us_toyshop'
 ]
 
 profile_pic = [
@@ -23,21 +26,27 @@ profile_pic = [
 ]
 
 title_array = [
-  'School',
+  'Aquarium',
+  'Icecream',
+  'Toys',
+  'Zoo',
+  'Picnic',
+  'Indoor play park',
   'Park',
-  'Groceries',
-  'Dishes',
-  'Football',
-  'Cooking'
+  'Swimming pool',
+  'Toy shop'
 ]
 
 detail_array = [
-  'Have a wonderful day at school',
-  'play with your friends at the park',
-  'go hopping with mummy',
-  'do the dishes. Remember to put the plates in the drying rack',
-  'play football. Get ready to kick the ball around',
-  'cook pasta with daddy'
+  'visit the aquarium',
+  'get icecream with daddy',
+  'play with toys at home',
+  'visit the zoo with mummy',
+  'go to the park and have a picnic',
+  'play at the indoor play park',
+  'go for a stroll at the park',
+  'have a swim in the pool',
+  'visit the toy shop'
 ]
 puts 'Cleaning up db...'
 Review.destroy_all
@@ -52,7 +61,7 @@ puts 'Creating users...'
 user_email_list = ['s_pinchen@hotmail.com', 'ivanwilf@hotmail.com', 'natasha030320@gmail.com', 'hhknight@me.com']
 user_list = []
 
-user_email_list.length.times do |index|
+2.times do |index|
   user = User.create!(email: user_email_list[index], password: "password", name: Faker::Name.name, birthday: Date.new(rand(2011..2015), rand(1..12), rand(1..28)), username: user_email_list[index].match(/(\S+)(@)(\S+)/)[1], url: profile_pic[index])
   user_list << user
   puts "User #{user.id}: #{user.email} was created!"
