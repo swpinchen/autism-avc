@@ -1,7 +1,7 @@
 <div class="container user-show">
   <div class="row dashboard">
     <div class ="col-3 profile">
-      <div class="mt-3"style="background-color: #d6dde4e0; border-radius: 41px;">
+      <div class="mt-3"style="background-color: #d6dde4e0; border-radius: 10px;">
         <%unless @user.url.nil?%>
           <img id="perfil-pic"class="my-3"src="<%=@user.url%>">
         <%end%>
@@ -40,29 +40,68 @@
         <%i = 0%>
         <% while i <= 6 do%>
           <%if i == 0 %>
-            <p class="day-week"><b>Today</b></p>
+            <div class="day-week"><b>Today</b>
+              <%@items.each do |item|%>
+                <%if item.start_date.strftime('%A') == (Time.now + i.days).strftime('%A') %>
+                  <div class="card-product">
+                    <%= cl_image_tag item.photo.key %>
+                    <div class="card-product-infos">
+                      <h2><%=item.title%></h2>
+                      <p><%=item.details%></p>
+                      <p>Starts at: <%=item.start_date.strftime('%A, %d %b %Y %l:%M %p')%></p>
+                    </div>
+                    <%= link_to item_path(item), method: :delete, data: { confirm: "Are you sure?" }, class: "block2" do%>
+                      <i class="fas fa-times"></i>
+                    <%end%>
+                    <%= link_to edit_item_path(item), class: "block3" do%>
+                      <i class="far fa-edit"></i>
+                    <%end%>
+                  </div>
+                <%end%>
+              <%end%>
+            </div>
            <%elsif i == 1 %>
-            <p class="day-week"><b>Tomorrow</b></p> 
+            <div class="day-week"><b>Tomorrow</b>
+              <%@items.each do |item|%>
+                <%if item.start_date.strftime('%A') == (Time.now + i.days).strftime('%A') %>
+                  <div class="card-product">
+                    <%= cl_image_tag item.photo.key %>
+                    <div class="card-product-infos">
+                      <h2><%=item.title%></h2>
+                      <p><%=item.details%></p>
+                      <p>Starts at: <%=item.start_date.strftime('%A, %d %b %Y %l:%M %p')%></p>
+                    </div>
+                    <%= link_to item_path(item), method: :delete, data: { confirm: "Are you sure?" }, class: "block2" do%>
+                      <i class="fas fa-times"></i>
+                    <%end%>
+                    <%= link_to edit_item_path(item), class: "block3" do%>
+                      <i class="far fa-edit"></i>
+                    <%end%>
+                  </div>
+                <%end%>
+              <%end%>
+            </div>
           <%else%>
-            <p class="day-week"><b><%=(Time.now + i.days).strftime('%A')%></b></p>
-          <%end%>
-          <%@items.each do |item|%>
-            <%if item.start_date.strftime('%A') == (Time.now + i.days).strftime('%A') %>
-              <div class="card-product">
-                <%= cl_image_tag item.photo.key %>
-                <div class="card-product-infos">
-                  <h2><%=item.title%></h2>
-                  <p><%=item.details%></p>
-                  <p>Starts at: <%=item.start_date.strftime('%A, %d %b %Y %l:%M %p')%></p>
-                </div>
-                <%= link_to item_path(item), method: :delete, data: { confirm: "Are you sure?" }, class: "block2" do%>
-                  <i class="fas fa-times"></i>
+            <div class="day-week"><b><%=(Time.now + i.days).strftime('%A')%></b>
+              <%@items.each do |item|%>
+                <%if item.start_date.strftime('%A') == (Time.now + i.days).strftime('%A') %>
+                  <div class="card-product">
+                    <%= cl_image_tag item.photo.key %>
+                    <div class="card-product-infos">
+                      <h2><%=item.title%></h2>
+                      <p><%=item.details%></p>
+                      <p>Starts at: <%=item.start_date.strftime('%A, %d %b %Y %l:%M %p')%></p>
+                    </div>
+                    <%= link_to item_path(item), method: :delete, data: { confirm: "Are you sure?" }, class: "block2" do%>
+                      <i class="fas fa-times"></i>
+                    <%end%>
+                    <%= link_to edit_item_path(item), class: "block3" do%>
+                      <i class="far fa-edit"></i>
+                    <%end%>
+                  </div>
                 <%end%>
-                <%= link_to edit_item_path(item), class: "block3" do%>
-                  <i class="far fa-edit"></i>
-                <%end%>
-              </div>
-            <%end%>
+              <%end%>
+            </div>
           <%end%>
           <%i = i + 1%>
         <%end%>
