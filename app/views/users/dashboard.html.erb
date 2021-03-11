@@ -2,35 +2,30 @@
   <div class="row dashboard">
     <div class="col-8">
       <div class="summary">
-        <div class="container d-flex justify-content-around info-api" style="padding: 36px;">
-          <div class="weather" style="height: 200px; width: 200px;">
+        <div class="link-container d-flex justify-content-between button-container">
+          <div class="summary-cal links">
+            <div class="weather" style="height: 200px; width: 200px;">
             <!--Weather API here-->
-            <div id="weather-api" style="height: 200px; width: 200px;"></div>
+            
+              <div id="weather-api" style="height: 200px; width: 200px;"></div>
+            </div>
           </div>
-          <div class="day-of-week">
-            <!--Calendar API here-->
-            <p class="date-day">March <%= DateTime.now.day %></p>
+          <div class="summary-cal links">  
+            <div class="day-of-week">
+              <!--Calendar API here-->
+              <p class="date-day">March <%= DateTime.now.day %></p>
+            </div>
           </div>
         </div>
         <div class="link-container d-flex justify-content-between button-container">
-          <div class="links">
+          <div class="links" style="width: 100%;">
             <div class="position-relative">
               <div class="summary-cal">
-                <p class = "title">WEEK</p>
                 <i class="fas fa-calendar-alt dashboard-btn"></i>
               </div>
               <%= link_to '', items_path, class: "itemlink" %>
             </div>
           </div> 
-          <div class="links">
-            <div class="position-relative">
-              <div class="summary-cal">
-                <p class = "title">DAY</p>
-                <i class="far fa-calendar dashboard-btn"></i>
-              </div>
-              <%= link_to '', items_path, class: "itemlink" %>
-            </div>
-          </div>
         </div>
       </div>
     </div>

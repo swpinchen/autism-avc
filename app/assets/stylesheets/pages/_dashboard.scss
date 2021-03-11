@@ -19,7 +19,7 @@ font-weight: 500;
 color:#151170;
 }
 .summary-cal{
-	background-color: #ffffff;
+	background-color: #e5ecf3;
 	border-radius: 16px;
 	// height: 46vh;
 	text-align: center;
@@ -47,6 +47,8 @@ color:#151170;
 	height: 200px;
 	background-size: cover;
 	position: relative;
+	margin-left: auto;
+    margin-right: auto;
 	p{
 		margin: 0;
 		position: absolute;
@@ -77,6 +79,11 @@ color:#151170;
 #weather-api{
 	background-repeat: no-repeat;
 	background-size: cover;
+}
+
+.weather{
+  margin-left: auto;
+  margin-right: auto;
 }
 
 @media (min-width: 100px) and (max-width: 575px) {
