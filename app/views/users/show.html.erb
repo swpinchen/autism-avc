@@ -16,7 +16,6 @@
       </button>
     </div>
     <div class="col-9 info mt-3">
-      
       <!-- Modal -->
       <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -36,41 +35,24 @@
           </div>
         </div>
       </div>
-        <table id ="profile-table"class="table table-hover">
-          <thead id="parent-table">
-            <tr>
-            <th scope="col">Item</th>
-            <th scope="col">Description</th>
-            <th scope="col">Start date</th>
-            <th scope="col">End date</th>
-            <th scope="col">Reaction</th>
-            <th scope="col">Delete</th>
-            </tr>
-          </thead>
-          <tbody>
+        <!--Cards go here-->
+      <div class="card-grid">
+        <%i = 0%>
+        <% while i <= 6 do%>
+          <p style="color: #0c0a3e;font-size: 20px;" ><b><%=(Time.now + i.days).strftime('%A')%></b></p>
           <%@items.each do |item|%>
-            <tr>
-              <th scope="row"><%=item.title%></th>
-              <td><%=item.details%></td>
-              <td><%=item.start_date.strftime("%A  %l%p")%></td>
-              <td><%=item.end_date.strftime("%A  %l%p")%></td>
-              <%if item.reviews[0].nil?%>
-                <td>-</td>
-              <%else%>
-                <% if item.reviews.last.rating == 1 %>
-                  <td><i class="fa fa-sad-cry table-icon"></i></td>
-                  <% elsif item.reviews.last.rating == 2 %>
-                  <td><i class="fa fa-frown-open table-icon"></i></td>
-                  <% elsif item.reviews.last.rating == 3 %>
-                  <td><i class="fa fa-laugh-squint table-icon"></i></td>
-                  <% elsif item.reviews.last.rating == 4 %>
-                  <td><i class="fa fa-grin-hearts table-icon"></i></td>
-                  <% end %>
-              <%end%>
-              <td><%= link_to '', item_path(item), method: :delete, data: { confirm: "Are you sure?" }, class:"fas fa-times"%></td>
-            </tr>
+            <%if item.start_date.strftime('%A') == (Time.now + i.days).strftime('%A') %>
+              <div class="card-product">
+                <%= cl_image_tag item.photo.key %>
+                <div class="card-product-infos">
+                  <h2><%=item.title%></h2>
+                  <p><%=item.details%></p>
+                </div>
+              </div>
+            <%end%>
           <%end%>
-          </tbody>
-        </table>
+          <%i = i + 1%>
+        <%end%>
+      </div>
     </div>
 </div>
