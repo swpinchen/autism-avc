@@ -7,7 +7,6 @@
 
 .card-home {
   background-color: white;
-  border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 30px;
   width: 260px;
   text-align: center;
@@ -24,8 +23,12 @@
   color: white;
   text-align: center;
   font-size: 18px;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: 'Noto Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 
+}
+
+.card-home {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
 }
 .card-home img {
   border-radius: 0 0 30px 30px;
@@ -38,9 +41,8 @@
 }
 
 .logo {
-  width: 50px;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-  display: flex;
+  width: 220px;
+  padding: 15px;
   margin-bottom: 40px;
   color: white;
    align-items: center;
