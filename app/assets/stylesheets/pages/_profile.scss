@@ -39,11 +39,15 @@
 
 .card-product {
   overflow: hidden;
+  border-radius: 8px;
   height: 120px;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
+  margin-bottom: 3px;
+  &:hover{
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  }
 }
 
 .card-product img {
