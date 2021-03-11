@@ -36,26 +36,22 @@
 	width: 45%;
 }
 
-.day-of-week{
-	background-image: asset-url('calendar.png');
-	width: 200px;
-	height: 200px;
-	background-size: cover;
-	position: relative;
-	margin-left: auto;
-    margin-right: auto;
-	p{
-		margin: 0;
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		margin-right: -50%;
-		transform: translate(-50%, -50%);
-		color: #151170;
-		font-family: 'Roboto', sans-serif;
-		font-size: 37px;
-	}
+.current-month{
+  background-color: #0c0a3e;
+  color: white;
+  font-size: 30px;
+  margin: 0;
+  border-radius: 16px 16px 0px 0px;
 }
+
+.current-day{
+	background-color: white;
+	color: black;
+	margin: 0;
+	height: 148px;
+	font-size: 90px;
+	border-radius: 0px 0px 16px 16px;
+  }
 
 .dashboard-btn{
 	padding: 30px;
