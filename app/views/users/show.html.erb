@@ -5,10 +5,11 @@
         <%unless @user.url.nil?%>
           <img id="perfil-pic"class="my-3"src="<%=@user.url%>">
         <%end%>
+        <%= link_to 'Log out', destroy_user_session_path, method: :delete, data: {confirm: "Are you sure you would like to log out?"}, style: "padding-left: 38%;" %>
         <div class ="info">
-          <p><i style="color: #0c0a3e;font-size: 20px;"class="fas fa-user"></i>  <%=@user.username%></p>
-          <p><i style="color: #0c0a3e;font-size: 20px;"class="fas fa-envelope"></i>  <%=@user.email%></p>
-          <p><i style="color: #0c0a3e;font-size: 20px;"class="fas fa-calendar-check"></i>  Member since: <%=@user.created_at.strftime("%d-%m-%Y")%></p>
+          <p><i style="color: #7571ab;font-size: 20px;"class="fas fa-user"></i>  <%=@user.username%></p>
+          <p><i style="color: #7571ab;font-size: 20px;"class="fas fa-envelope"></i>  <%=@user.email%></p>
+          <p><i style="color: #7571ab;font-size: 20px;"class="fas fa-calendar-check"></i>  Member since: <%=@user.created_at.strftime("%d-%m-%Y")%></p>
         </div>
       </div>
       <button type="button" class="btn btn-primary btn-block my-3" data-toggle="modal" data-target="#exampleModalLong">
