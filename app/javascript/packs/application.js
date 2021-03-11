@@ -94,7 +94,7 @@ days.forEach( day => {
 
 items.forEach( item => {
   item.addEventListener("click", function( event ) {
-    const intro = 'You have to'
+    const intro = "Let's"
     const text = intro + details.innerText
     voice.say(text);
   }, false);
