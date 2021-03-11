@@ -39,7 +39,7 @@
       <div class="card-grid">
         <%i = 0%>
         <% while i <= 6 do%>
-          <p><%=(Time.now + i.days).strftime('%A')%></p>
+          <p style="color: #0c0a3e;font-size: 20px;" ><b><%=(Time.now + i.days).strftime('%A')%></b></p>
           <%@items.each do |item|%>
             <%if item.start_date.strftime('%A') == (Time.now + i.days).strftime('%A') %>
               <div class="card-product">
