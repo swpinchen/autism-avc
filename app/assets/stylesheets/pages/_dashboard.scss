@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 .summary{
-	background-color: #d4e0ec;
 	border-radius: 16px;
 	// height: 95vh;
 	text-align: center;
@@ -12,22 +11,19 @@
 	justify-content: space-around;
 }
 .title {
-padding-top: 40px;
-font-size: 35px;
-font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-font-weight: 500;
-color:#151170;
+  padding-top: 40px;
+  font-size: 35px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: 500;
+  color:#151170;
 }
 .summary-cal{
-	background-color: #e5ecf3;
+	background-color: #d8dfe6;
 	border-radius: 16px;
 	// height: 46vh;
 	text-align: center;
-	padding: 24px;
+	padding: 42px 0px;
 	box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
-}
-
-.button-container {
 }
 
 .item-summary{
@@ -38,37 +34,31 @@ color:#151170;
 
 .links {
 	width: 45%;
-	
 }
 
-.day-of-week{
-	background-image: asset-url('calendar.png');
-	width: 200px;
-	height: 200px;
-	background-size: cover;
-	position: relative;
-	margin-left: auto;
-    margin-right: auto;
-	p{
-		margin: 0;
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		margin-right: -50%;
-		transform: translate(-50%, -50%);
-		color: #151170;
-		font-family: 'Roboto', sans-serif;
-		font-size: 37px;
-	}
+.current-month{
+  background-color: #0c0a3e;
+  color: white;
+  font-size: 30px;
+  margin: 0;
+  border-radius: 16px 16px 0px 0px;
 }
+
+.current-day{
+	background-color: white;
+	color: black;
+	margin: 0;
+	height: 148px;
+	font-size: 90px;
+	border-radius: 0px 0px 16px 16px;
+  }
 
 .dashboard-btn{
 	padding: 30px;
-	font-size: 180px;
+	font-size: 100px;
 	text-decoration: none;
 	margin: 0px;
 	color:#0C0A3E;
-	font-size: 90px;
 	&:hover{
 		color: #0C0A3E;
 	}
