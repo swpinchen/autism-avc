@@ -7,15 +7,15 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 image_array = [
-  'https://www.icloud.com/iclouddrive/02tSO5rUkYhxTOTzFk4WKjCtA#sunshine_aquarium',
-  'https://www.icloud.com/iclouddrive/0VdAg144jvL8ayxCVAf3MN-GQ#cold_stone_icecream',
-  'https://www.icloud.com/iclouddrive/0nCMW6WZVB4evAzZNv2u9ftLA#toys_at_home',
-  'https://www.icloud.com/iclouddrive/0JOX4UQayxY6x-o2osZkRZzDg#ueno_zoo',
-  'https://www.icloud.com/iclouddrive/0tXkM7zUCGt3BOekteTnsUKXA#picnic_at_park',
-  'https://www.icloud.com/iclouddrive/0jqiughq9buwcTVFJhef4A8IA#us_kids_indoor_playhouse',
-  'https://www.icloud.com/iclouddrive/0i61fqMNPtUzfT33x0oZ1dDDA#walking_in_the_park',
-  'https://www.icloud.com/iclouddrive/0vXXWi7iAK88EwrmgkfuVVaqQ#outdoor_swimming_pool',
-  'https://www.icloud.com/iclouddrive/01Oq_TEbR0d6XVjNSoBOeRHpg#toys_r_us_toyshop'
+  'https://res.cloudinary.com/dbhwvijtx/image/upload/v1615429687/sunshine_aquarium_fksllm.jpg',
+  'https://res.cloudinary.com/dbhwvijtx/image/upload/v1615429686/cold_stone_icecream_afiuzg.jpg',
+  'https://res.cloudinary.com/dbhwvijtx/image/upload/v1615429686/toys_at_home_jgywxo.jpg',
+  'https://res.cloudinary.com/dbhwvijtx/image/upload/v1615429686/ueno_zoo_cgnxgd.jpg',
+  'https://res.cloudinary.com/dbhwvijtx/image/upload/v1615429687/picnic_at_park_oz7dye.jpg',
+  'https://res.cloudinary.com/dbhwvijtx/image/upload/v1615429687/us_kids_indoor_playhouse_muefco.jpg',
+  'https://res.cloudinary.com/dbhwvijtx/image/upload/v1615429687/walking_in_the_park_isuns6.jpg',
+  'https://res.cloudinary.com/dbhwvijtx/image/upload/v1615429686/outdoor_swimming_pool_wi0j2g.jpg',
+  'https://res.cloudinary.com/dbhwvijtx/image/upload/v1615429686/toys_r_us_toyshop_lu8cs9.jpg'
 ]
 
 profile_pic = [
