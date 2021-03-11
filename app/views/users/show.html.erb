@@ -5,9 +5,9 @@
         <img id="perfil-pic"class="my-3"src="<%=@user.url%>">
       <%end%>
       <div class ="info">
-        <p><i class="fas fa-user"></i> <%=@user.username%></p>
-        <p><i class="fas fa-envelope"></i> <%=@user.email%></p>
-        <p><i class="fas fa-calendar-check"></i> Member since: <%=@user.created_at.strftime("%d-%m-%Y")%></p>
+        <p><i style="color: #0c0a3e;font-size: 20px;"class="fas fa-user"></i>  <%=@user.username%></p>
+        <p><i style="color: #0c0a3e;font-size: 20px;"class="fas fa-envelope"></i>  <%=@user.email%></p>
+        <p><i style="color: #0c0a3e;font-size: 20px;"class="fas fa-calendar-check"></i>  Member since: <%=@user.created_at.strftime("%d-%m-%Y")%></p>
       </div>
     </div>
     <div class="col-9 info mt-3">
