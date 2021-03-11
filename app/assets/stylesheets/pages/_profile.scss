@@ -38,6 +38,7 @@
 }
 
 .card-product {
+  position: relative;
   overflow: hidden;
   border-radius: 8px;
   height: 120px;
@@ -72,4 +73,33 @@
 
 .card-product .card-product-infos {
   padding: 16px;
+}
+
+.block2 {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  color: #80808038;
+  &:hover{
+    color: red;
+  }
+}
+
+.block3 {
+  position: absolute;
+  bottom: 6px;
+  right: 6px;
+  color: #80808038;
+  &:hover{
+    color: gray;
+  }
+}
+
+.day-week{
+  color: #0c0a3e;
+  font-size: 20px;
+  background-color: #d8dfe6;
+  padding: 6px 16px;
+  border-radius: 13px;
+  margin-top: 10px;
 }
