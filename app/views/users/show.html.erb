@@ -1,7 +1,9 @@
 <div class="container user-show">
   <div class="row dashboard">
     <div class="col-3 profile mt-3"style="background-color: #d6dde4e0; border-radius: 41px;">
-      <img class="my-3"src="<%=@user.url%>" style="border-radius: 50%;width: 100%; height: auto; padding: 16px;">
+      <%unless @user.url.nil?%>
+        <img class="my-3"src="<%=@user.url%>" style="border-radius: 50%;width: 70%; height: auto; padding: 16px;">
+      <%end%>
       <p><b>Username:</b></p>
       <p><%=@user.username%></p>
       <p><b>Email:</b></p>
