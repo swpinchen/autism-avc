@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   def show
     @user = current_user
     @item = Item.new
-    @items = Item.all.sort_by{ |item| item.start_date }
+    @items = policy_scope(Item).order(:start_date)
     authorize @user
   end
   def dashboard
