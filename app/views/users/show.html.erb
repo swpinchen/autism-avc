@@ -2,14 +2,11 @@
   <div class="row dashboard">
     <div class="col-3 profile mt-3"style="background-color: #d6dde4e0; border-radius: 41px;">
       <%unless @user.url.nil?%>
-        <img class="my-3"src="<%=@user.url%>" style="border-radius: 50%;width: 70%; height: auto; padding: 16px;">
+        <img id="perfil-pic"class="my-3"src="<%=@user.url%>">
       <%end%>
-      <p><b>Username:</b></p>
-      <p><%=@user.username%></p>
-      <p><b>Email:</b></p>
-      <p><%=@user.email%></p>
-      <p><b>Member since:</b></p>
-      <p><%=@user.created_at.strftime("%d-%m-%Y")%></p>
+      <p><i class="fas fa-user"></i> <%=@user.username%></p>
+      <p><i class="fas fa-envelope"></i> <%=@user.email%></p>
+      <p><i class="fas fa-calendar-check"></i> Member since: <%=@user.created_at.strftime("%d-%m-%Y")%></p>
     </div>
     <div class="col-9 info mt-3">
       <button type="button" class="btn btn-primary mb-3" data-toggle="modal" data-target="#exampleModalLong">
