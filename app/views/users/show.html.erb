@@ -47,7 +47,14 @@
                 <div class="card-product-infos">
                   <h2><%=item.title%></h2>
                   <p><%=item.details%></p>
+                  <p>Starts at: <%=item.start_date.strftime('%A, %d %b %Y %l:%M %p')%></p>
                 </div>
+                <%= link_to item_path(item), method: :delete, data: { confirm: "Are you sure?" }, class: "block2" do%>
+                  <i class="fas fa-times"></i>
+                <%end%>
+                <%= link_to edit_item_path(item), class: "block3" do%>
+                  <i class="far fa-edit"></i>
+                <%end%>
               </div>
             <%end%>
           <%end%>
