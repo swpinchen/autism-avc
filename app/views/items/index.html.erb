@@ -1,5 +1,5 @@
 <div class="week">
-  <%= week_calendar(number_of_weeks: 1) do |date| %>
+  <%= week_calendar do |date| %>
     <div class = "<%= date == Date.today ? "todaycontainer" : "daycontainer" %>">
         <% @items.each do |item|  %>
           <%= link_to item_path(item) do %>
