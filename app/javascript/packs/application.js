@@ -95,7 +95,7 @@ days.forEach( day => {
 items.forEach( item => {
   item.addEventListener("click", function( event ) {
     const intro = 'You have to'
-    const text = intro + details.innerText
+    const text = intro + ' ' + details.innerText
     voice.say(text);
   }, false);
 });
@@ -103,7 +103,7 @@ items.forEach( item => {
 
   if (sad) {
     console.log(sad.dataset.happyTitle);
-    const text = comfort + sad.dataset.happyDetails;
+    const text = comfort + ' ' + sad.dataset.happyDetails;
     readText(text);
   }
 })
