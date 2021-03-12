@@ -50,6 +50,17 @@
                       <h2><%=item.title%></h2>
                       <p><%=item.details%></p>
                       <p>Starts at: <%=item.start_date.strftime('%A, %d %b %Y %l:%M %p')%></p>
+                      <%if item.reviews.any?%>
+                        <% if item.reviews.last.rating == 1 %>
+                          <p>Reaction: <i class="fa fa-sad-cry" style="font-size: 12px;"></i></p>
+                        <% elsif item.reviews.last.rating == 2 %>
+                          <p>Reaction: <i class="fa fa-frown-open" style="font-size: 12px;"></i></p>
+                        <% elsif item.reviews.last.rating == 3 %>
+                          <p>Reaction: <i class="fa fa-laugh-squint" style="font-size: 12px;"></i></p>
+                        <% elsif item.reviews.last.rating == 4 %>
+                          <p>Reaction: <i class="fa fa-grin-hearts" style="font-size: 12px;"></i></p>
+                        <% end %>
+                      <%end%>
                     </div>
                     <%= link_to item_path(item), method: :delete, data: { confirm: "Are you sure?" }, class: "block2" do%>
                       <i class="fas fa-times"></i>
@@ -71,6 +82,17 @@
                       <h2><%=item.title%></h2>
                       <p><%=item.details%></p>
                       <p>Starts at: <%=item.start_date.strftime('%A, %d %b %Y %l:%M %p')%></p>
+                      <%if item.reviews.any?%>
+                        <% if item.reviews.last.rating == 1 %>
+                          <p>Reaction: <i class="fa fa-sad-cry" style="font-size: 12px;"></i></p>
+                        <% elsif item.reviews.last.rating == 2 %>
+                          <p>Reaction: <i class="fa fa-frown-open" style="font-size: 12px;"></i></p>
+                        <% elsif item.reviews.last.rating == 3 %>
+                          <p>Reaction: <i class="fa fa-laugh-squint" style="font-size: 12px;"></i></p>
+                        <% elsif item.reviews.last.rating == 4 %>
+                          <p>Reaction: <i class="fa fa-grin-hearts" style="font-size: 12px;"></i></p>
+                        <% end %>
+                      <%end%>
                     </div>
                     <%= link_to item_path(item), method: :delete, data: { confirm: "Are you sure?" }, class: "block2" do%>
                       <i class="fas fa-times"></i>
@@ -92,6 +114,17 @@
                       <h2><%=item.title%></h2>
                       <p><%=item.details%></p>
                       <p>Starts at: <%=item.start_date.strftime('%A, %d %b %Y %l:%M %p')%></p>
+                      <%if item.reviews.any?%>
+                        <% if item.reviews.last.rating == 1 %>
+                          <p>Reaction: <i class="fa fa-sad-cry" style="font-size: 12px;"></i></p>
+                        <% elsif item.reviews.last.rating == 2 %>
+                          <p>Reaction: <i class="fa fa-frown-open" style="font-size: 12px;"></i></p>
+                        <% elsif item.reviews.last.rating == 3 %>
+                          <p>Reaction: <i class="fa fa-laugh-squint" style="font-size: 12px;"></i></p>
+                        <% elsif item.reviews.last.rating == 4 %>
+                          <p>Reaction: <i class="fa fa-grin-hearts" style="font-size: 12px;"></i></p>
+                        <% end %>
+                      <%end%>
                     </div>
                     <%= link_to item_path(item), method: :delete, data: { confirm: "Are you sure?" }, class: "block2" do%>
                       <i class="fas fa-times"></i>
