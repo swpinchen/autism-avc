@@ -37,6 +37,9 @@ title_array = [
   'Toy shop'
 ]
 
+# Just for Demo porposes, days of the week from Today (March Friday 12)
+days_of_week = %w(Friday Saturday Sunday Monday Tuesday Wednesday Thursday)
+
 detail_array = [
   'visit the aquarium',
   'get icecream with daddy',
@@ -66,12 +69,14 @@ user_email_list.length.times do |index|
   user_list << user
   puts "User #{user.id}: #{user.email} was created!"
   image_array.each_with_index do |image, index|
-    if image == image_array[0]
-      # if its school only create the item in weekdays
-      item = Item.new(title: title_array[index], start_date: DateTime.new(2021, 3, rand(11..19), rand(1..23),rand(0..59)), end_date: DateTime.new(2021, 3, rand(11..19)), category: "task,", details: detail_array[index])
-    else
-      item = Item.new(title: title_array[index], start_date: DateTime.new(2021, 3, rand(11..19), rand(1..23),rand(0..59)), end_date: DateTime.new(2021, 3, rand(11..29)), category: "task,", details: detail_array[index])
-    end
+
+    # if image == image_array[0]
+    #   # if its school only create the item in weekdays
+    #   item = Item.new(title: title_array[index], start_date: DateTime.new(2021, 3, rand(11..19), rand(1..23),rand(0..59)), end_date: DateTime.new(2021, 3, rand(11..19)), category: "task,", details: detail_array[index])
+    # else
+    #   item = Item.new(title: title_array[index], start_date: DateTime.new(2021, 3, rand(11..19), rand(1..23),rand(0..59)), end_date: DateTime.new(2021, 3, rand(11..29)), category: "task,", details: detail_array[index])
+    # end
+    Item.new
     item.user = user
     file = URI.open(image)
     item.photo.attach(io: file, filename: 'first.png', content_type: 'image/png')
