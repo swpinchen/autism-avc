@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 image_array = [
+  'http://scwww.edi.akashi.hyogo.jp/~el_tntg/gakkou.jpg',
   'https://res.cloudinary.com/dbhwvijtx/image/upload/v1615429687/sunshine_aquarium_fksllm.jpg',
   'https://res.cloudinary.com/dbhwvijtx/image/upload/v1615429686/cold_stone_icecream_afiuzg.jpg',
   'https://res.cloudinary.com/dbhwvijtx/image/upload/v1615429686/toys_at_home_jgywxo.jpg',
@@ -26,6 +27,7 @@ profile_pic = [
 ]
 
 title_array = [
+  'School',
   'Aquarium',
   'Icecream',
   'Toys',
@@ -37,7 +39,11 @@ title_array = [
   'Toy shop'
 ]
 
+# Just for Demo porposes, days of the week from Today (March Friday 12)
+days_of_week = %w(Friday Saturday Sunday Monday Tuesday Wednesday Thursday)
+
 detail_array = [
+  'Have a nice day at school from mom and dad',
   'visit the aquarium',
   'get icecream with daddy',
   'play with toys at home',
@@ -58,27 +64,45 @@ puts 'All users deleted.'
 
 
 puts 'Creating users...'
-user_email_list = ['s_pinchen@hotmail.com', 'ivanwilf@hotmail.com', 'natasha030320@gmail.com', 'hhknight@me.com']
+user_email_list = ['s_pinchen@hotmail.com']
 user_list = []
 
 user_email_list.length.times do |index|
   user = User.create!(email: user_email_list[index], password: "password", name: Faker::Name.name, birthday: Date.new(rand(2011..2015), rand(1..12), rand(1..28)), username: user_email_list[index].match(/(\S+)(@)(\S+)/)[1], url: profile_pic[index])
   user_list << user
   puts "User #{user.id}: #{user.email} was created!"
-  image_array.each_with_index do |image, index|
-    if image == image_array[0]
-      # if its school only create the item in weekdays
-      item = Item.new(title: title_array[index], start_date: DateTime.new(2021, 3, rand(11..19), rand(1..23),rand(0..59)), end_date: DateTime.new(2021, 3, rand(11..19)), category: "task,", details: detail_array[index])
-    else
-      item = Item.new(title: title_array[index], start_date: DateTime.new(2021, 3, rand(11..19), rand(1..23),rand(0..59)), end_date: DateTime.new(2021, 3, rand(11..29)), category: "task,", details: detail_array[index])
+  # image_array.each_with_index do |image, index|
+    # if image == image_array[0]
+    #   # if its school only create the item in weekdays
+    #   item = Item.new(title: title_array[index], start_date: DateTime.new(2021, 3, rand(11..19), rand(1..23),rand(0..59)), end_date: DateTime.new(2021, 3, rand(11..19)), category: "task,", details: detail_array[index])
+    # else
+    #   item = Item.new(title: title_array[index], start_date: DateTime.new(2021, 3, rand(11..19), rand(1..23),rand(0..59)), end_date: DateTime.new(2021, 3, rand(11..29)), category: "task,", details: detail_array[index])
+    # end
+    days_of_week.each_with_index do |day, index|
+      if day == "Saturday" || day == "Sunday"
+        i = 1
+      else
+        i = 0
+      end
+      while i < 3 do
+        if i == 0
+          item = Item.new(title: title_array[i], start_date: (DateTime.now + index.days), end_date: (DateTime.now + 1.days + index.days), category: "task,", details: detail_array[i]) 
+          item.user = user
+          file = URI.open(image_array[i])
+          item.photo.attach(io: file, filename: 'first.png', content_type: 'image/png')
+          item.save!
+        else
+          random = rand(1..9)
+          item = Item.new(title: title_array[random], start_date: (DateTime.now + index.days), end_date: (DateTime.now + 1.days + index.days), category: "task,", details: detail_array[random]) 
+          item.user = user
+          file = URI.open(image_array[random])
+          item.photo.attach(io: file, filename: 'first.png', content_type: 'image/png')
+          item.save!
+        end
+        puts "Task for #{user.name} created"
+        i += 1
+      end
     end
-    item.user = user
-    file = URI.open(image)
-    item.photo.attach(io: file, filename: 'first.png', content_type: 'image/png')
-    item.save!
-    puts "Task for #{user.name} created"
-
-  end
 end
 
 # Test to make Herny a parent
