@@ -64,7 +64,7 @@ puts 'All users deleted.'
 
 
 puts 'Creating users...'
-user_email_list = ['s_pinchen@hotmail.com', 'ivanwilf@hotmail.com']#, 'natasha030320@gmail.com', 'hhknight@me.com']
+user_email_list = ['s_pinchen@hotmail.com', 'ivanwilf@hotmail.com', 'natasha030320@gmail.com', 'hhknight@me.com']
 user_list = []
 
 user_email_list.length.times do |index|
