@@ -43,7 +43,7 @@
           <%if i == 0 %>
             <div class="day-week"><b>Today</b>
               <%@items.each do |item|%>
-                <%if item.start_date.strftime('%A') == (Time.now + i.days).strftime('%A') %>
+                <%if item.start_date.strftime(' %B %e %Y') == (Time.now + i.days).strftime(' %B %e %Y') %>
                   <div class="card-product">
                     <%= cl_image_tag item.photo.key %>
                     <div class="card-product-infos">
