@@ -38,7 +38,7 @@ document.addEventListener('turbolinks:load', () => {
 
 // Init SpeechSynth API
 const synth = window.speechSynthesis;
-const voice = new SynthVoice({voiceURI: "Google UK English Female"});
+const voice = new SynthVoice({voiceURI: "Google UK English Female", volume: 0.5});
 
 // DOM Elements
 const days = document.querySelectorAll("th");
