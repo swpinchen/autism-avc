@@ -43,7 +43,7 @@
           <%if i == 0 %>
             <div class="day-week"><b>Today</b>
               <%@items.each do |item|%>
-                <%if item.start_date.strftime(' %B %e %Y') == (Time.now + i.days).strftime(' %B %e %Y') %>
+                <%if item.start_date.strftime('%B %e %Y') == (Time.now + i.days).strftime('%B %e %Y') %>
                   <div class="card-product">
                     <%= cl_image_tag item.photo.key %>
                     <div class="card-product-infos">
@@ -64,7 +64,7 @@
            <%elsif i == 1 %>
             <div class="day-week"><b>Tomorrow</b>
               <%@items.each do |item|%>
-                <%if item.start_date.strftime('%A') == (Time.now + i.days).strftime('%A') %>
+                <%if item.start_date.strftime('%B %e %Y') == (Time.now + i.days).strftime('%B %e %Y') %>
                   <div class="card-product">
                     <%= cl_image_tag item.photo.key %>
                     <div class="card-product-infos">
@@ -85,7 +85,7 @@
           <%else%>
             <div class="day-week"><b><%=(Time.now + i.days).strftime('%A')%></b>
               <%@items.each do |item|%>
-                <%if item.start_date.strftime('%A') == (Time.now + i.days).strftime('%A') %>
+                <%if item.start_date.strftime('%B %e %Y') == (Time.now + i.days).strftime('%B %e %Y') %>
                   <div class="card-product">
                     <%= cl_image_tag item.photo.key %>
                     <div class="card-product-infos">
