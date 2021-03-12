@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 image_array = [
-  'http://scwww.edi.akashi.hyogo.jp/~el_tntg/gakkou.jpg'
+  'http://scwww.edi.akashi.hyogo.jp/~el_tntg/gakkou.jpg',
   'https://res.cloudinary.com/dbhwvijtx/image/upload/v1615429687/sunshine_aquarium_fksllm.jpg',
   'https://res.cloudinary.com/dbhwvijtx/image/upload/v1615429686/cold_stone_icecream_afiuzg.jpg',
   'https://res.cloudinary.com/dbhwvijtx/image/upload/v1615429686/toys_at_home_jgywxo.jpg',
@@ -27,7 +27,7 @@ profile_pic = [
 ]
 
 title_array = [
-  'School'
+  'School',
   'Aquarium',
   'Icecream',
   'Toys',
@@ -43,7 +43,7 @@ title_array = [
 days_of_week = %w(Friday Saturday Sunday Monday Tuesday Wednesday Thursday)
 
 detail_array = [
-  'Have a nice day at school from mom and dad'
+  'Have a nice day at school from mom and dad',
   'visit the aquarium',
   'get icecream with daddy',
   'play with toys at home',
@@ -64,7 +64,7 @@ puts 'All users deleted.'
 
 
 puts 'Creating users...'
-user_email_list = ['s_pinchen@hotmail.com', 'ivanwilf@hotmail.com', 'natasha030320@gmail.com', 'hhknight@me.com']
+user_email_list = ['s_pinchen@hotmail.com', 'ivanwilf@hotmail.com']#, 'natasha030320@gmail.com', 'hhknight@me.com']
 user_list = []
 
 user_email_list.length.times do |index|
@@ -79,12 +79,29 @@ user_email_list.length.times do |index|
     #   item = Item.new(title: title_array[index], start_date: DateTime.new(2021, 3, rand(11..19), rand(1..23),rand(0..59)), end_date: DateTime.new(2021, 3, rand(11..29)), category: "task,", details: detail_array[index])
     # end
     days_of_week.each_with_index do |day, index|
-      Item.new(title: title_array[index], start_date: (DateTime.now + index.days), category: "task,", details: detail_array[index]) 
-      item.user = user
-      file = URI.open(image_array[index])
-      item.photo.attach(io: file, filename: 'first.png', content_type: 'image/png')
-      item.save!
-      puts "Task for #{user.name} created"
+      if day == "Saturday" || day == "Sunday"
+        i = 1
+      else
+        i = 0
+      end
+      while i < 3 do
+        if i == 0
+          item = Item.new(title: title_array[i], start_date: (DateTime.now + index.days), end_date: (DateTime.now + 1.days + index.days), category: "task,", details: detail_array[i]) 
+          item.user = user
+          file = URI.open(image_array[i])
+          item.photo.attach(io: file, filename: 'first.png', content_type: 'image/png')
+          item.save!
+        else
+          random = rand(1..9)
+          item = Item.new(title: title_array[random], start_date: (DateTime.now + index.days), end_date: (DateTime.now + 1.days + index.days), category: "task,", details: detail_array[random]) 
+          item.user = user
+          file = URI.open(image_array[random])
+          item.photo.attach(io: file, filename: 'first.png', content_type: 'image/png')
+          item.save!
+        end
+        puts "Task for #{user.name} created"
+        i += 1
+      end
     end
 end
 
