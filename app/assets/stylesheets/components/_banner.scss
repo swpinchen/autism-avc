@@ -1,15 +1,23 @@
 .banner {
   background-size: cover;
   background-position: center;
-  padding-top: 30px;
-  height: 95vh;
+  padding: 30px 30px 0px 30px;
+  height: 70vh;
 }
 
 .banner h1 {
   margin: 1;
   color: white;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-  font-size: 33px;
+  font-size: 60px;
+  font-weight: bold;
+}
+
+.banner h2 {
+  margin: 1;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  font-size: 30px;
   font-weight: bold;
 }
 
@@ -18,5 +26,4 @@
   color: white;
   // opacity: .7;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-
 }
